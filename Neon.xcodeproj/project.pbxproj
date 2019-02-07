@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0BB11FA2220B36560089AD1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB11FA1220B36560089AD1C /* AppDelegate.swift */; };
 		0BB11FA4220B36560089AD1C /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0BB11FA3220B36560089AD1C /* GameScene.sks */; };
-		0BB11FA6220B36560089AD1C /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0BB11FA5220B36560089AD1C /* Actions.sks */; };
 		0BB11FA8220B36560089AD1C /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB11FA7220B36560089AD1C /* GameScene.swift */; };
 		0BB11FAA220B36560089AD1C /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB11FA9220B36560089AD1C /* GameViewController.swift */; };
 		0BB11FAD220B36560089AD1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BB11FAB220B36560089AD1C /* Main.storyboard */; };
@@ -21,7 +20,6 @@
 		0BB11F9E220B36560089AD1C /* Neon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BB11FA1220B36560089AD1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BB11FA3220B36560089AD1C /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		0BB11FA5220B36560089AD1C /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		0BB11FA7220B36560089AD1C /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		0BB11FA9220B36560089AD1C /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		0BB11FAC220B36560089AD1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -62,7 +60,6 @@
 			children = (
 				0BB11FA1220B36560089AD1C /* AppDelegate.swift */,
 				0BB11FA3220B36560089AD1C /* GameScene.sks */,
-				0BB11FA5220B36560089AD1C /* Actions.sks */,
 				0BB11FA7220B36560089AD1C /* GameScene.swift */,
 				0BB11FA9220B36560089AD1C /* GameViewController.swift */,
 				0BB11FAB220B36560089AD1C /* Main.storyboard */,
@@ -135,7 +132,6 @@
 				0BB11FA4220B36560089AD1C /* GameScene.sks in Resources */,
 				0BB11FAF220B36570089AD1C /* Assets.xcassets in Resources */,
 				0BB11FB2220B36570089AD1C /* LaunchScreen.storyboard in Resources */,
-				0BB11FA6220B36560089AD1C /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +291,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L688AU9RCV;
 				INFOPLIST_FILE = Neon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -312,6 +309,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L688AU9RCV;
 				INFOPLIST_FILE = Neon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
