@@ -3,10 +3,14 @@
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene {
+class GameScene: SKScene , SKPhysicsContactDelegate {
   
   private var label : SKLabelNode?
   private var spinnyNode : SKShapeNode?
+  
+  let PLAYER_CATAGORY :UInt32 = 1
+  let PIECE_CATAGORY :UInt32 = 2
+  let TAIL_CATAGORY :UInt32 = 3
   
   let mainNode = SKNode()
   let line = SKShapeNode()
@@ -15,14 +19,20 @@ class GameScene: SKScene {
   let points = NSCache<AnyObject, AnyObject>()
   var pointArray = [CGPoint]()
   var tailArray = [SKSpriteNode]()
-  var pieceNode :PieceNode?
+  
   var lastNode :SKSpriteNode?
   
   override func didMove(to view: SKView) {
     print("moved to game scene")
+    physicsWorld.contactDelegate = self;
     
     self.addChild(mainNode)
     
+    player.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width:30,height:30))
+    player.physicsBody?.collisionBitMask = 2
+    player.physicsBody?.contactTestBitMask = 1
+    player.physicsBody?.categoryBitMask = PLAYER_CATAGORY
+    player.physicsBody?.isDynamic = false
     self.addChild(player)
     
     let startPoint = CGPoint.zero
@@ -38,20 +48,29 @@ class GameScene: SKScene {
 //    line.glowWidth = 20
     line.lineCap = CGLineCap.round
     
-    //createTail()
+    createTail()
     
     
     mainNode.addChild(line)
     let myAction = SKAction.move(by: CGVector(dx: 0, dy: -150), duration: 1.0)
     
-    pieceNode = PieceNode(player:player , pos:CGPoint(x:0, y:-100))
+    let piece1 = PieceNode(color: UIColor.blue, size: CGSize(width:80,height:80))
+    piece1.position = CGPoint(x: 200, y: 300)
+    mainNode.addChild(piece1)
     
-    self.addChild(pieceNode!)
-    pieceNode!.findAngle()
+    piece1.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 80, height: 80))
+    piece1.physicsBody?.collisionBitMask = 0
+    piece1.physicsBody?.contactTestBitMask = 1
+    piece1.physicsBody?.categoryBitMask = PIECE_CATAGORY
+    piece1.physicsBody?.isDynamic = true
     
+    let piece2 = PieceNode(color: UIColor.blue, size: CGSize(width:80,height:80))
+    piece2.position = CGPoint(x: -200, y: 100)
+    mainNode.addChild(piece2)
     //mainNode.run(SKAction.repeatForever(myAction) )
     //mainNode
   }
+  
   func createTail(){
     lastNode = SKSpriteNode(color: UIColor.red, size: CGSize(width: 20, height: 20))
     
@@ -60,7 +79,7 @@ class GameScene: SKScene {
     mainNode.addChild(lastNode!)
     tailArray.append(lastNode!)
     
-    //check if the bounding boxes collide
+    
     if tailArray.count < 4{
       return
     }
@@ -75,7 +94,8 @@ class GameScene: SKScene {
         let spot = SKSpriteNode(color: UIColor.green, size: CGSize(width: 20, height: 20))
         spot.position = intersectPoint!
         mainNode.addChild(spot)
-        let subArray = tailArray[i ..< tailArray.count]
+        let subArray = tailArray[i ..< tailArray.count-1]
+        tailArray = [SKSpriteNode]() + tailArray[0...i]
         var mutaPath = CGMutablePath()
         
         var firstPoint = true
@@ -90,8 +110,18 @@ class GameScene: SKScene {
         }
         let polygon = SKShapeNode()
         polygon.path = mutaPath.copy()
-        polygon.fillColor = UIColor.green
+        //polygon.fillColor = UIColor.green
         polygon.strokeColor = UIColor.blue
+        polygon.physicsBody = SKPhysicsBody(polygonFrom: mutaPath.copy()!)
+        polygon.physicsBody?.categoryBitMask = TAIL_CATAGORY
+        polygon.physicsBody?.collisionBitMask = 0
+        polygon.physicsBody?.contactTestBitMask = 1
+        
+        let wait = SKAction.wait(forDuration: 0.5)
+        let removeSlef = SKAction.removeFromParent()
+        let actions = [wait,removeSlef]
+        polygon.run(SKAction.sequence(actions))
+        
         mainNode.addChild(polygon)
         print("muta path = \(subArray.count)")
         print("the lines intersect")
@@ -126,58 +156,18 @@ class GameScene: SKScene {
   }
   
   
-  func touchDown(atPoint pos : CGPoint) {
-    path.addLine(to: pos)
-    
-    
-  }
-  
-  func touchMoved(toPoint pos : CGPoint) {
-    
-  }
-  
-  func touchUp(atPoint pos : CGPoint) {
-    
-  }
-  
-  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-    
-    
-    for t in touches {
-      
-      player.position = t.location(in: self)
-    }
-  }
-  
-  override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-    for t in touches {
-      
-      player.position = t.location(in: self)
-    }
-    
-    
-    
-    
-  }
-  
-  override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-    for t in touches { self.touchUp(atPoint: t.location(in: self)) }
-  }
-  
-  override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-    for t in touches { self.touchUp(atPoint: t.location(in: self)) }
-  }
+
   
   
   override func update(_ currentTime: TimeInterval) {
-    pieceNode?.findAngle()
+    
     if let lastNode = lastNode {
       let dx = player.position.x - lastNode.position.x
       let dy = player.position.y - lastNode.position.y - mainNode.position.y
       let dist = sqrt(dx * dx + dy * dy);
       
-      if dist > 50{
-        //createTail()
+      if dist > 100{
+        createTail()
       }
       
     }
@@ -206,18 +196,4 @@ class GameScene: SKScene {
   }
   
 }
-extension CGPoint {
-  
-  /**
-   Calculates a distance to the given point.
-   
-   :param: point - the point to calculate a distance to
-   
-   :returns: distance between current and the given points
-   */
-  func distance(point: CGPoint) -> CGFloat {
-    let dx = self.x - point.x
-    let dy = self.y - point.y
-    return sqrt(dx * dx + dy * dy);
-  }
-}
+
