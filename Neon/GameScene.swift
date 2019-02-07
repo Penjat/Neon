@@ -64,35 +64,39 @@ class GameScene: SKScene {
     let b1 = relPos
     let b2 = tailArray[tailArray.count - 2].position
     for i in 1 ..< tailArray.count-3{
-      var a2 = tailArray[i].position
+      let a2 = tailArray[i].position
       let intersectPoint = getIntersectionOfLines(line1: (a: a1, b: a2), line2: (a: b1, b: b2))
       if intersectPoint != nil{
-      //if doBoundingBoxesIntersect(a1: a1 , a2: a2 , b1: b1 ,b2: b2 ){
+        
         let spot = SKSpriteNode(color: UIColor.green, size: CGSize(width: 20, height: 20))
         spot.position = intersectPoint!
         mainNode.addChild(spot)
+        let subArray = tailArray[i ..< tailArray.count]
+        var mutaPath = CGMutablePath()
+        
+        var firstPoint = true
+        for node in subArray{
+          if firstPoint {
+            mutaPath.move(to: node.position)
+            firstPoint = false
+          }else{
+            
+          }
+          mutaPath.addLine(to: node.position)
+        }
+        let polygon = SKShapeNode()
+        polygon.path = mutaPath.copy()
+        polygon.fillColor = UIColor.green
+        polygon.strokeColor = UIColor.blue
+        mainNode.addChild(polygon)
+        print("muta path = \(subArray.count)")
         print("the lines intersect")
         return
       }
       a1 = a2
     }
   }
-  func doBoundingBoxesIntersect(a1:CGPoint , a2:CGPoint , b1:CGPoint , b2:CGPoint) -> Bool {
-    let x1 = min(a1.x,a2.x)
-    let y1 = min(a1.y , a2.y)
-    let width1 = max(a1.x,a2.x)-x1
-    let height1 = max(a1.y,a2.y)-y1
-    
-    let x2 = min(b1.x,b2.x)
-    let y2 = min(b1.y , b2.y)
-    let width2 = max(b1.x,b2.x)-x2
-    let height2 = max(b1.y,b2.y)-y2
-    
-    
-    let rect1 = CGRect(x: x1 ,y: y1 ,width: width1,height: height1 )
-    let rect2 = CGRect(x: x2 ,y: y2 ,width: width2,height: height2 )
-    return rect1.intersects(rect2)
-  }
+  
   
   func getIntersectionOfLines(line1: (a: CGPoint, b: CGPoint), line2: (a: CGPoint, b: CGPoint)) -> CGPoint? {
     
