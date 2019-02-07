@@ -15,7 +15,7 @@ class GameScene: SKScene {
   let points = NSCache<AnyObject, AnyObject>()
   var pointArray = [CGPoint]()
   var tailArray = [SKSpriteNode]()
-  
+  var pieceNode :PieceNode?
   var lastNode :SKSpriteNode?
   
   override func didMove(to view: SKView) {
@@ -38,14 +38,18 @@ class GameScene: SKScene {
 //    line.glowWidth = 20
     line.lineCap = CGLineCap.round
     
-    createTail()
+    //createTail()
     
     
     mainNode.addChild(line)
     let myAction = SKAction.move(by: CGVector(dx: 0, dy: -150), duration: 1.0)
     
+    pieceNode = PieceNode(player:player , pos:CGPoint(x:0, y:-100))
     
-    mainNode.run(SKAction.repeatForever(myAction) )
+    self.addChild(pieceNode!)
+    pieceNode!.findAngle()
+    
+    //mainNode.run(SKAction.repeatForever(myAction) )
     //mainNode
   }
   func createTail(){
@@ -166,13 +170,14 @@ class GameScene: SKScene {
   
   
   override func update(_ currentTime: TimeInterval) {
+    pieceNode?.findAngle()
     if let lastNode = lastNode {
       let dx = player.position.x - lastNode.position.x
       let dy = player.position.y - lastNode.position.y - mainNode.position.y
       let dist = sqrt(dx * dx + dy * dy);
       
       if dist > 50{
-        createTail()
+        //createTail()
       }
       
     }
