@@ -11,6 +11,7 @@
 		0B72919B220CA87F008CAF41 /* GameScene+Collisions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B72919A220CA87F008CAF41 /* GameScene+Collisions.swift */; };
 		0B72919D220CA8B1008CAF41 /* GameScene+Touches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B72919C220CA8B1008CAF41 /* GameScene+Touches.swift */; };
 		0B72919F220CB784008CAF41 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B72919E220CB784008CAF41 /* Player.swift */; };
+		0B7291A3220CC7C7008CAF41 /* GameScene+TailFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7291A2220CC7C7008CAF41 /* GameScene+TailFunctions.swift */; };
 		0BB11FA2220B36560089AD1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB11FA1220B36560089AD1C /* AppDelegate.swift */; };
 		0BB11FA4220B36560089AD1C /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0BB11FA3220B36560089AD1C /* GameScene.sks */; };
 		0BB11FA8220B36560089AD1C /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB11FA7220B36560089AD1C /* GameScene.swift */; };
@@ -25,6 +26,7 @@
 		0B72919A220CA87F008CAF41 /* GameScene+Collisions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Collisions.swift"; sourceTree = "<group>"; };
 		0B72919C220CA8B1008CAF41 /* GameScene+Touches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Touches.swift"; sourceTree = "<group>"; };
 		0B72919E220CB784008CAF41 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		0B7291A2220CC7C7008CAF41 /* GameScene+TailFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+TailFunctions.swift"; sourceTree = "<group>"; };
 		0BB11F9E220B36560089AD1C /* Neon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BB11FA1220B36560089AD1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BB11FA3220B36560089AD1C /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -59,9 +61,11 @@
 		0B7291A1220CB7CD008CAF41 /* GameScene+Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0BB11FA3220B36560089AD1C /* GameScene.sks */,
 				0BB11FA7220B36560089AD1C /* GameScene.swift */,
 				0B72919C220CA8B1008CAF41 /* GameScene+Touches.swift */,
 				0B72919A220CA87F008CAF41 /* GameScene+Collisions.swift */,
+				0B7291A2220CC7C7008CAF41 /* GameScene+TailFunctions.swift */,
 			);
 			path = "GameScene+Extensions";
 			sourceTree = "<group>";
@@ -87,7 +91,6 @@
 			children = (
 				0BB11FA1220B36560089AD1C /* AppDelegate.swift */,
 				0BB11FA9220B36560089AD1C /* GameViewController.swift */,
-				0BB11FA3220B36560089AD1C /* GameScene.sks */,
 				0BB11FB0220B36570089AD1C /* LaunchScreen.storyboard */,
 				0BB11FAB220B36560089AD1C /* Main.storyboard */,
 				0B7291A1220CB7CD008CAF41 /* GameScene+Extensions */,
@@ -176,6 +179,7 @@
 				0BB11FAA220B36560089AD1C /* GameViewController.swift in Sources */,
 				0B72919F220CB784008CAF41 /* Player.swift in Sources */,
 				0B729199220CA1DB008CAF41 /* PieceNode.swift in Sources */,
+				0B7291A3220CC7C7008CAF41 /* GameScene+TailFunctions.swift in Sources */,
 				0BB11FA2220B36560089AD1C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
