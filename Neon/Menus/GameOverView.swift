@@ -2,8 +2,7 @@
 
 import UIKit
 
-class TitleMenuView: UIView {
-
+class GameOverView: UIView {
   @IBOutlet var contentView: UIView!
   
   var delegate :MenuDelegate?
@@ -25,11 +24,11 @@ class TitleMenuView: UIView {
     contentView.autoresizingMask = [.flexibleWidth , .flexibleHeight]
     
   }
-  @IBAction func pressedStart(_ sender: Any) {
-    if let delegate = delegate {
-      delegate.startGame()
-    }
+  @IBAction func pressedReTry(_ sender: Any) {
+    
+  }
+  @IBAction func pressedMainMenu(_ sender: Any) {
+    
   }
   
 }
-

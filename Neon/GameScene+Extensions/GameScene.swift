@@ -3,7 +3,7 @@
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene , SKPhysicsContactDelegate , TitleDelegate {
+class GameScene: SKScene , SKPhysicsContactDelegate , MenuDelegate {
   
   
   let PLAYER_CATAGORY :UInt32 = 1
