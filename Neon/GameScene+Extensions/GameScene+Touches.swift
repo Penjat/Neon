@@ -25,6 +25,10 @@ extension GameScene {
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     
+    //check if game has started
+    if !isPlaying {
+      return
+    }
     
     for t in touches {
       
@@ -33,6 +37,12 @@ extension GameScene {
   }
   
   override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+    
+    //check if game has started
+    if !isPlaying {
+      return
+    }
+    
     for t in touches {
       
       player.position = t.location(in: self)

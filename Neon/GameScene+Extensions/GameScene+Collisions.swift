@@ -18,7 +18,7 @@ extension GameScene{
       
       player.dmgPlayer()
       if player.checkGameOver(){
-        //Do gameover stuff
+        gameOver()
       }
       
     }else if contact.bodyB.categoryBitMask == PLAYER_CATAGORY && contact.bodyA.categoryBitMask == PIECE_CATAGORY {
@@ -26,7 +26,7 @@ extension GameScene{
       
       player.dmgPlayer()
       if player.checkGameOver(){
-        //Do gameover stuff
+        gameOver()
       }
     }
     

@@ -16,7 +16,7 @@ class Player: SKSpriteNode {
   var score = 0
   let scoreLabel = SKLabelNode(text: "0")
   
-  var isFlashing = false //signifies has been damaged and shouldn't take more dmg
+  var isFlashing = true //signifies has been damaged and shouldn't take more dmg
   
   convenience init(scene: GameScene) {
     self.init(texture: nil, color: UIColor.blue, size: CGSize(width:20,height:20 ) )

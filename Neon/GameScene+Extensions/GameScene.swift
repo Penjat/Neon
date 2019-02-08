@@ -3,14 +3,14 @@
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene , SKPhysicsContactDelegate {
+class GameScene: SKScene , SKPhysicsContactDelegate , TitleDelegate {
   
   
   let PLAYER_CATAGORY :UInt32 = 1
   let PIECE_CATAGORY :UInt32 = 2
   let TAIL_CATAGORY :UInt32 = 3
   
-  
+  var isPlaying = false
   
   let mainNode = SKNode()
   let path = UIBezierPath()
@@ -19,6 +19,8 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
   var tailArray = [SKSpriteNode]()
   
   var lastNode :SKSpriteNode?
+  
+  var currentMenu :UIView?
   
   override func didMove(to view: SKView) {
     print("moved to game scene")
@@ -41,7 +43,21 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
     mainNode.run(SKAction.repeatForever(myAction) )
     //mainNode
     pieceFactory = PieceFactory(gameScene: self)
-    pieceFactory.startCreating()
+    
+    
+    let titleMenu = TitleMenuView(frame: CGRect.zero)
+    
+    view.addSubview(titleMenu)
+    titleMenu.delegate = self
+    
+    
+    titleMenu.frame = view.frame
+//    titleMenu.translatesAutoresizingMaskIntoConstraints = false
+//    NSLayoutConstraint(item: titleMenu, attribute: NSLayoutConstraint.Attribute.centerX, relatedBy: NSLayoutConstraint.Relation.equal, toItem: view, attribute: NSLayoutConstraint.Attribute.centerX, multiplier: 1, constant: 0).isActive = true
+//    NSLayoutConstraint(item: titleMenu, attribute: NSLayoutConstraint.Attribute.centerY, relatedBy: NSLayoutConstraint.Relation.equal, toItem: view, attribute: NSLayoutConstraint.Attribute.centerY, multiplier: 1, constant: 0).isActive = true
+//    NSLayoutConstraint(item: titleMenu, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 400).isActive = true
+//    NSLayoutConstraint(item: titleMenu, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 400).isActive = true
+    currentMenu = titleMenu
   }
   
   func createPlayer(){
@@ -61,6 +77,27 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
     
     
     createTail()
+  }
+  func startGame(){
+    
+    //do nothing if already playing
+    if isPlaying {
+      return
+    }
+    
+    isPlaying = true
+    player.isFlashing = false
+    pieceFactory.startCreating()
+    
+    UIView.animate(withDuration: 2.0, animations: {
+      self.currentMenu?.alpha = 0.0
+      //TODO put in an if let
+      self.currentMenu?.frame = CGRect(x: self.view!.frame.minX, y: self.view!.frame.minY + 100, width: self.view!.frame.width, height: self.view!.frame.height)
+    }, completion: {(true) in
+      self.currentMenu?.removeFromSuperview()
+    })
+    
+    
   }
   
   func createPiece(atPoint: CGPoint , shouldGet:Bool){
