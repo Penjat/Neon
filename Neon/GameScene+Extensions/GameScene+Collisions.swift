@@ -48,7 +48,7 @@ extension GameScene{
       
       if piece.shouldGet {
         //add to score
-        player.addToScore(points: 30)
+        player.addToScore(points: piece.points)
       }else{
         //dmg player
         player.dmgPlayer()

@@ -12,4 +12,5 @@ class PieceNode: SKSpriteNode {
   //GamePiece, something the player can circle around
   
   var shouldGet :Bool = true
+  var points :Int = 40
 }
