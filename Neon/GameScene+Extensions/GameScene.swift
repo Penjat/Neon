@@ -14,51 +14,71 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
   
   let mainNode = SKNode()
   let path = UIBezierPath()
-  let player = SKSpriteNode(color: UIColor.blue, size: CGSize(width:30,height:30))
+  var player :Player!
   var tailArray = [SKSpriteNode]()
   
   var lastNode :SKSpriteNode?
   
   override func didMove(to view: SKView) {
     print("moved to game scene")
+    player = Player(scene: self)
     physicsWorld.contactDelegate = self;
     
     self.addChild(mainNode)
+    createPlayer()
     
-    player.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width:30,height:30))
+    
+    
+    createPiece(atPoint: CGPoint(x: 100, y: 200), shouldGet: true)
+    createPiece(atPoint: CGPoint(x: 200, y: 200), shouldGet: false)
+    createPiece(atPoint: CGPoint(x: 200, y: 200), shouldGet: false)
+    createPiece(atPoint: CGPoint(x: -100, y: 200), shouldGet: true)
+    createPiece(atPoint: CGPoint(x: -200, y: 200), shouldGet: false)
+   
+    
+    let myAction = SKAction.move(by: CGVector(dx: 0, dy: -150), duration: 1.0)
+    //mainNode.run(SKAction.repeatForever(myAction) )
+    //mainNode
+  }
+  
+  func createPlayer(){
+    
+    //TODO put this inside player
+    player.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width:20,height:20))
     player.physicsBody?.collisionBitMask = 2
     player.physicsBody?.contactTestBitMask = 1
     player.physicsBody?.categoryBitMask = PLAYER_CATAGORY
     player.physicsBody?.isDynamic = false
     self.addChild(player)
     
-   
+    //start with 3 lives
+    player.addLife(scene:self)
+    player.addLife(scene:self)
+    player.addLife(scene:self)
+    
     
     createTail()
-    
-    
-    let myAction = SKAction.move(by: CGVector(dx: 0, dy: -150), duration: 1.0)
-    
-    let piece1 = PieceNode(color: UIColor.blue, size: CGSize(width:80,height:80))
-    piece1.position = CGPoint(x: 200, y: 300)
-    mainNode.addChild(piece1)
-    
-    piece1.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 80, height: 80))
-    piece1.physicsBody?.collisionBitMask = 0
-    piece1.physicsBody?.contactTestBitMask = 1
-    piece1.physicsBody?.categoryBitMask = PIECE_CATAGORY
-    piece1.physicsBody?.isDynamic = true
-    
-    let piece2 = PieceNode(color: UIColor.blue, size: CGSize(width:80,height:80))
-    piece2.position = CGPoint(x: -200, y: 100)
-    mainNode.addChild(piece2)
-    //mainNode.run(SKAction.repeatForever(myAction) )
-    //mainNode
   }
   
-  
-  
-  
+  func createPiece(atPoint: CGPoint , shouldGet:Bool){
+    var color = UIColor.blue
+    if !shouldGet {
+      color = UIColor.red
+    }
+    
+    
+    let piece = PieceNode(color: color, size: CGSize(width:40,height:40))
+    //TODO pass this through init
+    piece.shouldGet = shouldGet
+    piece.position = atPoint
+    mainNode.addChild(piece)
+    
+    piece.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 40, height: 40))
+    piece.physicsBody?.collisionBitMask = 0
+    piece.physicsBody?.contactTestBitMask = 1
+    piece.physicsBody?.categoryBitMask = PIECE_CATAGORY
+    piece.physicsBody?.isDynamic = true
+  }
 
   
   

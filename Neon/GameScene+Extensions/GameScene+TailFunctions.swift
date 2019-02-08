@@ -48,6 +48,7 @@ extension GameScene{
           }
           mutaPath.addLine(to: node.position)
         }
+        //TODO can just make an empty Node
         let polygon = SKShapeNode()
         polygon.path = mutaPath.copy()
         //polygon.fillColor = UIColor.green

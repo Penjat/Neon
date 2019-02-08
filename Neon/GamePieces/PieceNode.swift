@@ -10,4 +10,6 @@ import SpriteKit
 
 class PieceNode: SKSpriteNode {
   //GamePiece, something the player can circle around
+  
+  var shouldGet :Bool = true
 }
