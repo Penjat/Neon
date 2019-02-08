@@ -26,6 +26,13 @@ class Player: SKSpriteNode {
     scoreLabel.position = CGPoint(x:x , y:y)
     scoreLabel.fontSize = 50.0
     scene.addChild(scoreLabel)
+    
+    physicsBody = SKPhysicsBody(rectangleOf: CGSize(width:20,height:20))
+    physicsBody?.collisionBitMask = 2
+    physicsBody?.contactTestBitMask = 1
+    physicsBody?.categoryBitMask = PLAYER_CATAGORY
+    physicsBody?.isDynamic = false
+    
   }
   
   func addToScore(points:Int){

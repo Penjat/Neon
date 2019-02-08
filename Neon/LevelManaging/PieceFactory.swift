@@ -5,6 +5,7 @@ import SpriteKit
 class PieceFactory{
   
   weak var gameScene :GameScene!
+  var timer :Timer?
   
   init(gameScene: GameScene) {
     self.gameScene = gameScene
@@ -13,7 +14,11 @@ class PieceFactory{
   
   func startCreating(){
     //start creating pieces for the level
-    let timer = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true, block: {timer in self.createNextSection()})
+    timer = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true, block: {timer in self.createNextSection()})
+  }
+  func stopCreating(){
+    timer?.invalidate()
+    timer = nil
   }
   
   func createNextSection(){

@@ -19,6 +19,7 @@
 		0B7291AF220E2813008CAF41 /* gameOverMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B7291AE220E2813008CAF41 /* gameOverMenu.xib */; };
 		0B7291B1220E2A60008CAF41 /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7291B0220E2A60008CAF41 /* GameOverView.swift */; };
 		0B7291B3220E2B06008CAF41 /* MenuDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7291B2220E2B06008CAF41 /* MenuDelegateProtocol.swift */; };
+		0B7291B6220E429C008CAF41 /* CollisionCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7291B5220E429C008CAF41 /* CollisionCategories.swift */; };
 		0BB11FA2220B36560089AD1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB11FA1220B36560089AD1C /* AppDelegate.swift */; };
 		0BB11FA4220B36560089AD1C /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0BB11FA3220B36560089AD1C /* GameScene.sks */; };
 		0BB11FA8220B36560089AD1C /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB11FA7220B36560089AD1C /* GameScene.swift */; };
@@ -41,6 +42,7 @@
 		0B7291AE220E2813008CAF41 /* gameOverMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = gameOverMenu.xib; sourceTree = "<group>"; };
 		0B7291B0220E2A60008CAF41 /* GameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
 		0B7291B2220E2B06008CAF41 /* MenuDelegateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDelegateProtocol.swift; sourceTree = "<group>"; };
+		0B7291B5220E429C008CAF41 /* CollisionCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollisionCategories.swift; sourceTree = "<group>"; };
 		0BB11F9E220B36560089AD1C /* Neon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BB11FA1220B36560089AD1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BB11FA3220B36560089AD1C /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -105,6 +107,14 @@
 			path = Menus;
 			sourceTree = "<group>";
 		};
+		0B7291B4220E4273008CAF41 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				0B7291B5220E429C008CAF41 /* CollisionCategories.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		0BB11F95220B36550089AD1C = {
 			isa = PBXGroup;
 			children = (
@@ -124,16 +134,17 @@
 		0BB11FA0220B36560089AD1C /* Neon */ = {
 			isa = PBXGroup;
 			children = (
-				0BB11FA1220B36560089AD1C /* AppDelegate.swift */,
+				0B7291B4220E4273008CAF41 /* Enums */,
 				0B7291A7220E162F008CAF41 /* Menus */,
-				0BB11FA9220B36560089AD1C /* GameViewController.swift */,
-				0BB11FB0220B36570089AD1C /* LaunchScreen.storyboard */,
-				0BB11FAB220B36560089AD1C /* Main.storyboard */,
 				0B7291A6220E160B008CAF41 /* LevelManaging */,
 				0B7291A1220CB7CD008CAF41 /* GameScene+Extensions */,
 				0B7291A0220CB7B1008CAF41 /* GamePieces */,
 				0BB11FAE220B36570089AD1C /* Assets.xcassets */,
 				0BB11FB3220B36570089AD1C /* Info.plist */,
+				0BB11FA1220B36560089AD1C /* AppDelegate.swift */,
+				0BB11FA9220B36560089AD1C /* GameViewController.swift */,
+				0BB11FB0220B36570089AD1C /* LaunchScreen.storyboard */,
+				0BB11FAB220B36560089AD1C /* Main.storyboard */,
 			);
 			path = Neon;
 			sourceTree = "<group>";
@@ -220,6 +231,7 @@
 				0BB11FAA220B36560089AD1C /* GameViewController.swift in Sources */,
 				0B72919F220CB784008CAF41 /* Player.swift in Sources */,
 				0B7291AB220E1743008CAF41 /* TitleMenuView.swift in Sources */,
+				0B7291B6220E429C008CAF41 /* CollisionCategories.swift in Sources */,
 				0B7291AD220E2533008CAF41 /* GameScene+StartAndEnd.swift in Sources */,
 				0B729199220CA1DB008CAF41 /* PieceNode.swift in Sources */,
 				0B7291A3220CC7C7008CAF41 /* GameScene+TailFunctions.swift in Sources */,

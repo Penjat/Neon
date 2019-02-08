@@ -4,11 +4,11 @@ import SpriteKit
 import GameplayKit
 
 class GameScene: SKScene , SKPhysicsContactDelegate , MenuDelegate {
+ 
   
   
-  let PLAYER_CATAGORY :UInt32 = 1
-  let PIECE_CATAGORY :UInt32 = 2
-  let TAIL_CATAGORY :UInt32 = 3
+  
+  
   
   var isPlaying = false
   
@@ -60,24 +60,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate , MenuDelegate {
     currentMenu = titleMenu
   }
   
-  func createPlayer(){
-    
-    //TODO put this inside player
-    player.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width:20,height:20))
-    player.physicsBody?.collisionBitMask = 2
-    player.physicsBody?.contactTestBitMask = 1
-    player.physicsBody?.categoryBitMask = PLAYER_CATAGORY
-    player.physicsBody?.isDynamic = false
-    self.addChild(player)
-    
-    //start with 3 lives
-    player.addLife(scene:self)
-    player.addLife(scene:self)
-    player.addLife(scene:self)
-    
-    
-    createTail()
-  }
+  
   func startGame(){
     
     //do nothing if already playing

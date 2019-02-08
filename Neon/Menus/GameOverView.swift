@@ -18,7 +18,7 @@ class GameOverView: UIView {
   }
   
   private func commonInit(){
-    Bundle.main.loadNibNamed("titleMenu", owner: self, options: nil)
+    Bundle.main.loadNibNamed("gameOverMenu", owner: self, options: nil)
     addSubview(contentView)
     contentView.frame = self.bounds
     contentView.autoresizingMask = [.flexibleWidth , .flexibleHeight]
