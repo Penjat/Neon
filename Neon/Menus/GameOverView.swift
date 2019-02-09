@@ -25,7 +25,7 @@ class GameOverView: UIView {
     
   }
   @IBAction func pressedReTry(_ sender: Any) {
-    
+    delegate?.reStartGame()
   }
   @IBAction func pressedMainMenu(_ sender: Any) {
     

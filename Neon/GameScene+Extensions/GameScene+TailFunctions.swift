@@ -6,10 +6,14 @@ extension GameScene{
   
   
   func createTail(){
-    lastNode = SKSpriteNode(color: UIColor.red, size: CGSize(width: 20, height: 20))
     
     let relPos = CGPoint(x:player.position.x,y:player.position.y - mainNode.position.y)
-    lastNode?.position = relPos
+    
+    lastNode = TailPiece(position: relPos)
+    
+    
+    
+    
     mainNode.addChild(lastNode!)
     tailArray.append(lastNode!)
     
@@ -29,14 +33,16 @@ extension GameScene{
         spot.position = intersectPoint!
         mainNode.addChild(spot)
         let subArray = tailArray[i ..< tailArray.count-1]
-        tailArray = [SKSpriteNode]() + tailArray[0...i]
+        tailArray = [TailPiece]() + tailArray[0...i]
         let mutaPath = CGMutablePath()
         
         var firstPoint = true
         for node in subArray{
+          node.fadeOut()
           if firstPoint {
             mutaPath.move(to: node.position)
             firstPoint = false
+            
           }else{
             
           }

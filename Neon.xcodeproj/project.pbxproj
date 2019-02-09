@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B2A9892220E9FD90048DC80 /* TailPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2A9891220E9FD90048DC80 /* TailPiece.swift */; };
 		0B729199220CA1DB008CAF41 /* PieceNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B729198220CA1DB008CAF41 /* PieceNode.swift */; };
 		0B72919B220CA87F008CAF41 /* GameScene+Collisions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B72919A220CA87F008CAF41 /* GameScene+Collisions.swift */; };
 		0B72919D220CA8B1008CAF41 /* GameScene+Touches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B72919C220CA8B1008CAF41 /* GameScene+Touches.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B2A9891220E9FD90048DC80 /* TailPiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TailPiece.swift; sourceTree = "<group>"; };
 		0B729198220CA1DB008CAF41 /* PieceNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceNode.swift; sourceTree = "<group>"; };
 		0B72919A220CA87F008CAF41 /* GameScene+Collisions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Collisions.swift"; sourceTree = "<group>"; };
 		0B72919C220CA8B1008CAF41 /* GameScene+Touches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Touches.swift"; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 			children = (
 				0B729198220CA1DB008CAF41 /* PieceNode.swift */,
 				0B72919E220CB784008CAF41 /* Player.swift */,
+				0B2A9891220E9FD90048DC80 /* TailPiece.swift */,
 			);
 			path = GamePieces;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B72919D220CA8B1008CAF41 /* GameScene+Touches.swift in Sources */,
+				0B2A9892220E9FD90048DC80 /* TailPiece.swift in Sources */,
 				0B72919B220CA87F008CAF41 /* GameScene+Collisions.swift in Sources */,
 				0B7291B3220E2B06008CAF41 /* MenuDelegateProtocol.swift in Sources */,
 				0BB11FA8220B36560089AD1C /* GameScene.swift in Sources */,

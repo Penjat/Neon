@@ -16,9 +16,9 @@ class GameScene: SKScene , SKPhysicsContactDelegate , MenuDelegate {
   let path = UIBezierPath()
   var player :Player!
   var pieceFactory :PieceFactory!
-  var tailArray = [SKSpriteNode]()
+  var tailArray = [TailPiece]()
   
-  var lastNode :SKSpriteNode?
+  var lastNode :TailPiece?
   
   var currentMenu :UIView?
   
@@ -32,11 +32,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate , MenuDelegate {
     
     
     
-    createPiece(atPoint: CGPoint(x: 100, y: 200), shouldGet: true)
-    createPiece(atPoint: CGPoint(x: 200, y: 200), shouldGet: false)
-    createPiece(atPoint: CGPoint(x: 200, y: 200), shouldGet: false)
-    createPiece(atPoint: CGPoint(x: -100, y: 200), shouldGet: true)
-    createPiece(atPoint: CGPoint(x: -200, y: 200), shouldGet: false)
+    
    
     
     let myAction = SKAction.move(by: CGVector(dx: 0, dy: -150), duration: 1.0)
@@ -61,27 +57,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate , MenuDelegate {
   }
   
   
-  func startGame(){
-    
-    //do nothing if already playing
-    if isPlaying {
-      return
-    }
-    
-    isPlaying = true
-    player.isFlashing = false
-    pieceFactory.startCreating()
-    
-    UIView.animate(withDuration: 2.0, animations: {
-      self.currentMenu?.alpha = 0.0
-      //TODO put in an if let
-      self.currentMenu?.frame = CGRect(x: self.view!.frame.minX, y: self.view!.frame.minY + 100, width: self.view!.frame.width, height: self.view!.frame.height)
-    }, completion: {(true) in
-      self.currentMenu?.removeFromSuperview()
-    })
-    
-    
-  }
+  
   
   func createPiece(atPoint: CGPoint , shouldGet:Bool){
     var color = UIColor.blue

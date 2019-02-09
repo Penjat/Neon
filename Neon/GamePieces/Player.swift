@@ -33,13 +33,32 @@ class Player: SKSpriteNode {
     physicsBody?.categoryBitMask = PLAYER_CATAGORY
     physicsBody?.isDynamic = false
     
+    let startLabel = SKLabelNode(text: "✮")
+    
+    self.addChild(startLabel)
+    startLabel.fontSize = 60.0
+    startLabel.fontColor = UIColor.yellow
+    startLabel.position = CGPoint(x: 0 , y: -startLabel.frame.size.height/2)
+    
+    let rotate = SKAction.rotate(byAngle: 1, duration: 1)
+    let rotate2 = SKAction.repeatForever(rotate)
+    self.run(rotate2)
+    
   }
   
   func addToScore(points:Int){
     score += points
     scoreLabel.text = "\(score)"
   }
-  
+  func startGame(scene:GameScene){
+    score = 0
+    scoreLabel.text = "\(score)"
+    
+    //3 lives
+    addLife(scene:scene)
+    addLife(scene:scene)
+    addLife(scene:scene)
+  }
   
   override init(texture: SKTexture?, color: UIColor, size: CGSize) {
     super.init(texture: texture, color: color, size: size)
