@@ -40,12 +40,15 @@ extension GameScene{
     //TODO keep track for points multiplier
     if let piece = body.node as? PieceNode{
       
-      if piece.shouldGet {
+      if piece.collectType == CollectType.Points {
         //add to score
         player.addToScore(points: piece.points)
       }else{
         //dmg player
         player.dmgPlayer()
+        if player.checkGameOver(){
+          gameOver()
+        }
       }
     }else{
       print("Warning: node in piece category without pieceNode class")

@@ -50,38 +50,33 @@ class GameScene: SKScene , SKPhysicsContactDelegate , MenuDelegate {
     
     
     titleMenu.frame = view.frame
-//    titleMenu.translatesAutoresizingMaskIntoConstraints = false
-//    NSLayoutConstraint(item: titleMenu, attribute: NSLayoutConstraint.Attribute.centerX, relatedBy: NSLayoutConstraint.Relation.equal, toItem: view, attribute: NSLayoutConstraint.Attribute.centerX, multiplier: 1, constant: 0).isActive = true
-//    NSLayoutConstraint(item: titleMenu, attribute: NSLayoutConstraint.Attribute.centerY, relatedBy: NSLayoutConstraint.Relation.equal, toItem: view, attribute: NSLayoutConstraint.Attribute.centerY, multiplier: 1, constant: 0).isActive = true
-//    NSLayoutConstraint(item: titleMenu, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 400).isActive = true
-//    NSLayoutConstraint(item: titleMenu, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 400).isActive = true
+
     currentMenu = titleMenu
   }
   
   
   
   
-  func createPiece(atPoint: CGPoint , shouldGet:Bool){
-    var color = UIColor.blue
-    if !shouldGet {
-      color = UIColor.red
-    }
+  func createPieceNode(piece:Piece){
     
     
-    let piece = PieceNode(color: color, size: CGSize(width:40,height:40))
+    
+    let pieceNode = PieceNode(piece: piece)
     //TODO pass this through init
-    piece.shouldGet = shouldGet
-    let piecePosition = CGPoint(x:atPoint.x, y: atPoint.y - mainNode.position.y)
-    piece.position = piecePosition
-    mainNode.addChild(piece)
     
-    piece.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 40, height: 40))
-    piece.physicsBody?.collisionBitMask = 0
-    piece.physicsBody?.contactTestBitMask = 1
-    piece.physicsBody?.categoryBitMask = PIECE_CATAGORY
-    piece.physicsBody?.isDynamic = true
+//    let piecePosition = CGPoint(x: piece.position.x, y: piece.position.y - mainNode.position.y + frame.height/2)
+    let piecePosition = getPositionForScreen(x: -14, y: 0)
+    pieceNode.position = piecePosition
+    pieceNode.size = getSizeForScreen(width: 2, height: 1)
+    mainNode.addChild(pieceNode)
     
-    pieceArray.append(piece)
+    pieceNode.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 40, height: 40))
+    pieceNode.physicsBody?.collisionBitMask = 0
+    pieceNode.physicsBody?.contactTestBitMask = 1
+    pieceNode.physicsBody?.categoryBitMask = PIECE_CATAGORY
+    pieceNode.physicsBody?.isDynamic = true
+    
+    pieceArray.append(pieceNode)
   }
 
   

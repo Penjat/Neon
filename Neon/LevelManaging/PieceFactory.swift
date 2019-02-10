@@ -6,10 +6,15 @@ class PieceFactory{
   
   weak var gameScene :GameScene!
   var timer :Timer?
+  var curLevel :Level!
   
   
   init(gameScene: GameScene) {
     self.gameScene = gameScene
+    
+    let piece = Piece(position:CGPoint(x: 0,y: 0) , collectType: CollectType.DamagePlayer)
+    let segment = Segment(pieces: [piece] )
+    curLevel = Level(segments: [segment])
     
   }
   
@@ -26,8 +31,15 @@ class PieceFactory{
     print("creating next section")
     
     //TODO get actual size of the frame
-    let randX = CGFloat.random(in: -300...300)
-    let point = CGPoint(x:randX , y: gameScene.frame.height/2)
-    gameScene.createPiece(atPoint: point, shouldGet: true)
+//    let randX = CGFloat.random(in: -300...300)
+//    let point = CGPoint(x:randX , y: gameScene.frame.height/2)
+    
+    
+    let segment = curLevel.getNextSegment()
+    for piece in segment.pieces{
+      gameScene.createPieceNode(piece:piece)
+    }
+    
+    
   }
 }
