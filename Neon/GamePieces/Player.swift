@@ -51,10 +51,18 @@ class Player: SKSpriteNode {
     scoreLabel.text = "\(score)"
   }
   func startGame(scene:GameScene){
+    
+    //make sure already doesn't have lives
+    for life in lives {
+      life.removeFromParent()
+    }
+    lives.removeAll()
+    
+    //reset score
     score = 0
     scoreLabel.text = "\(score)"
     
-    //3 lives
+    //add 3 lives
     addLife(scene:scene)
     addLife(scene:scene)
     addLife(scene:scene)
@@ -79,6 +87,9 @@ class Player: SKSpriteNode {
   }
   
   func removeLife(){
+    
+    if lives.count == 0 {return}
+    
     let life = lives.removeLast()
     life.removeFromParent()
   }

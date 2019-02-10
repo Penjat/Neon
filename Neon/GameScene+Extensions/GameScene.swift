@@ -16,7 +16,9 @@ class GameScene: SKScene , SKPhysicsContactDelegate , MenuDelegate {
   let path = UIBezierPath()
   var player :Player!
   var pieceFactory :PieceFactory!
+  
   var tailArray = [TailPiece]()
+  var pieceArray = [PieceNode]()
   
   var lastNode :TailPiece?
   
@@ -78,6 +80,8 @@ class GameScene: SKScene , SKPhysicsContactDelegate , MenuDelegate {
     piece.physicsBody?.contactTestBitMask = 1
     piece.physicsBody?.categoryBitMask = PIECE_CATAGORY
     piece.physicsBody?.isDynamic = true
+    
+    pieceArray.append(piece)
   }
 
   
@@ -89,9 +93,20 @@ class GameScene: SKScene , SKPhysicsContactDelegate , MenuDelegate {
       let dy = player.position.y - lastNode.position.y - mainNode.position.y
       let dist = sqrt(dx * dx + dy * dy);
       
-      if dist > 100{
-        createTail()
+      //check if should remove a node
+      if let node = tailArray.first{
+        if (node.position.y + mainNode.position.y) < (view!.frame.height * -1){
+          tailArray.remove(at: 0)
+          node.removeFromParent()
+        }
       }
+      
+      if dist > 100{
+      
+        createTail()
+        
+      }
+      
       
     }
     

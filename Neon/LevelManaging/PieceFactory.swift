@@ -7,6 +7,7 @@ class PieceFactory{
   weak var gameScene :GameScene!
   var timer :Timer?
   
+  
   init(gameScene: GameScene) {
     self.gameScene = gameScene
     
@@ -23,7 +24,10 @@ class PieceFactory{
   
   func createNextSection(){
     print("creating next section")
-    let point = CGPoint(x:0 , y: gameScene.frame.height/2)
+    
+    //TODO get actual size of the frame
+    let randX = CGFloat.random(in: -300...300)
+    let point = CGPoint(x:randX , y: gameScene.frame.height/2)
     gameScene.createPiece(atPoint: point, shouldGet: true)
   }
 }

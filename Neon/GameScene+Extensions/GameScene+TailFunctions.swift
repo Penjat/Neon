@@ -29,15 +29,16 @@ extension GameScene{
       let intersectPoint = getIntersectionOfLines(line1: (a: a1, b: a2), line2: (a: b1, b: b2))
       if intersectPoint != nil{
         
-        let spot = SKSpriteNode(color: UIColor.green, size: CGSize(width: 20, height: 20))
-        spot.position = intersectPoint!
-        mainNode.addChild(spot)
+        //let spot = SKSpriteNode(color: UIColor.green, size: CGSize(width: 20, height: 20))
+        //spot.position = intersectPoint!
+        //mainNode.addChild(spot)
         let subArray = tailArray[i ..< tailArray.count-1]
         tailArray = [TailPiece]() + tailArray[0...i]
         let mutaPath = CGMutablePath()
         
         var firstPoint = true
         for node in subArray{
+          
           node.fadeOut()
           if firstPoint {
             mutaPath.move(to: node.position)
