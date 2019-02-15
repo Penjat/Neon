@@ -6,7 +6,8 @@ struct Level{
   let segments :[Segment]
   
   func getNextSegment() -> Segment{
-    //TODO get randomly
-    return segments[0]
+    //get a random segment
+    let randomIndex = Int.random(in: 0..<segments.count)
+    return segments[randomIndex]
   }
 }

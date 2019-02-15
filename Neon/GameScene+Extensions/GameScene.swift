@@ -65,9 +65,9 @@ class GameScene: SKScene , SKPhysicsContactDelegate , MenuDelegate {
     //TODO pass this through init
     
 //    let piecePosition = CGPoint(x: piece.position.x, y: piece.position.y - mainNode.position.y + frame.height/2)
-    let piecePosition = getPositionForScreen(x: -14, y: 0)
+    let piecePosition = getPositionForScreen(position: piece.position)
     pieceNode.position = piecePosition
-    pieceNode.size = getSizeForScreen(width: 2, height: 1)
+    pieceNode.size = getSizeForScreen(size: piece.size)
     mainNode.addChild(pieceNode)
     
     pieceNode.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 40, height: 40))

@@ -9,15 +9,15 @@
 import SpriteKit
 
 extension GameScene{
-  func getSizeForScreen(width:Int , height:Int) -> CGSize {
+  func getSizeForScreen(size:CGSize) -> CGSize {
     let ratio = frame.width / 32.0
     
-    return CGSize(width: ( CGFloat(integerLiteral: width)  * ratio), height: (CGFloat(integerLiteral:height)*ratio ))
+    return CGSize(width: size.width  * ratio, height: size.height*ratio )
     
   }
-  func getPositionForScreen(x: Int , y: Int) -> CGPoint{
+  func getPositionForScreen(position: CGPoint) -> CGPoint{
     let ratio = frame.width / 32.0
     
-    return CGPoint(x: ( CGFloat(integerLiteral: x)  * ratio), y: (CGFloat(integerLiteral:y)*ratio - mainNode.position.y + frame.height/2.0))
+    return CGPoint(x: ( position.x  * ratio), y: position.y * ratio - mainNode.position.y + frame.height/2.0)
   }
 }

@@ -12,9 +12,14 @@ class PieceFactory{
   init(gameScene: GameScene) {
     self.gameScene = gameScene
     
-    let piece = Piece(position:CGPoint(x: 0,y: 0) , collectType: CollectType.DamagePlayer)
+    let piece = Piece(position:CGPoint(x: 0,y: 0 ) , size: CGSize(width: 2, height: 1), collectType: CollectType.DamagePlayer)
     let segment = Segment(pieces: [piece] )
-    curLevel = Level(segments: [segment])
+    
+    let piece1 = Piece(position:CGPoint(x: 6,y: 0 ) , size: CGSize(width: 2, height: 1), collectType: CollectType.Points)
+    let piece2 = Piece(position:CGPoint(x: -6,y: 0 ) , size: CGSize(width: 2, height: 1), collectType: CollectType.Points)
+    
+    let segment1 = Segment(pieces: [piece1,piece2] )
+    curLevel = Level(segments: [segment,segment1])
     
   }
   
