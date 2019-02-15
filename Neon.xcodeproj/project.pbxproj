@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0B2A9892220E9FD90048DC80 /* TailPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2A9891220E9FD90048DC80 /* TailPiece.swift */; };
+		0B5E0363221686AD00606FC6 /* LevelModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0B5E0361221686AD00606FC6 /* LevelModel.xcdatamodeld */; };
 		0B729199220CA1DB008CAF41 /* PieceNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B729198220CA1DB008CAF41 /* PieceNode.swift */; };
 		0B72919B220CA87F008CAF41 /* GameScene+Collisions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B72919A220CA87F008CAF41 /* GameScene+Collisions.swift */; };
 		0B72919D220CA8B1008CAF41 /* GameScene+Touches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B72919C220CA8B1008CAF41 /* GameScene+Touches.swift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		0B2A9891220E9FD90048DC80 /* TailPiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TailPiece.swift; sourceTree = "<group>"; };
+		0B5E0362221686AD00606FC6 /* LevelModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LevelModel.xcdatamodel; sourceTree = "<group>"; };
 		0B729198220CA1DB008CAF41 /* PieceNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceNode.swift; sourceTree = "<group>"; };
 		0B72919A220CA87F008CAF41 /* GameScene+Collisions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Collisions.swift"; sourceTree = "<group>"; };
 		0B72919C220CA8B1008CAF41 /* GameScene+Touches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Touches.swift"; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				0BB11FA9220B36560089AD1C /* GameViewController.swift */,
 				0BB11FB0220B36570089AD1C /* LaunchScreen.storyboard */,
 				0BB11FAB220B36560089AD1C /* Main.storyboard */,
+				0B5E0361221686AD00606FC6 /* LevelModel.xcdatamodeld */,
 			);
 			path = Neon;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				0B7291A3220CC7C7008CAF41 /* GameScene+TailFunctions.swift in Sources */,
 				0B7291B1220E2A60008CAF41 /* GameOverView.swift in Sources */,
 				0B75BAC0221099AE00927098 /* Piece.swift in Sources */,
+				0B5E0363221686AD00606FC6 /* LevelModel.xcdatamodeld in Sources */,
 				0B75BABA2210970F00927098 /* Level.swift in Sources */,
 				0B75BABE2210977D00927098 /* Segment.swift in Sources */,
 				0BB11FA2220B36560089AD1C /* AppDelegate.swift in Sources */,
@@ -460,6 +464,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0B5E0361221686AD00606FC6 /* LevelModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0B5E0362221686AD00606FC6 /* LevelModel.xcdatamodel */,
+			);
+			currentVersion = 0B5E0362221686AD00606FC6 /* LevelModel.xcdatamodel */;
+			path = LevelModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0BB11F96220B36550089AD1C /* Project object */;
 }
