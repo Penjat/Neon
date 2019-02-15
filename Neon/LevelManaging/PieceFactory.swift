@@ -1,6 +1,8 @@
 
 
 import SpriteKit
+import CoreData
+
 
 class PieceFactory{
   

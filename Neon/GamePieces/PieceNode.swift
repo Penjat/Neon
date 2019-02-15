@@ -16,9 +16,9 @@ class PieceNode: SKSpriteNode {
   
   convenience init(piece: Piece ){
     
-    self.init(texture: nil, color: piece.collectType.getColor(), size: CGSize(width: 40.0, height: 40.0))
+    self.init(texture: nil, color: UIColor.blue, size: CGSize(width: 40.0, height: 40.0))
     points = 50
-    collectType = piece.collectType
+    
   }
   
   override init(texture: SKTexture?, color: UIColor, size: CGSize) {
