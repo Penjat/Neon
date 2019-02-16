@@ -6,6 +6,7 @@ extension GameScene{
   
   func startGame(){
     
+    
     //do nothing if already playing
     if isPlaying {
       return
@@ -13,7 +14,7 @@ extension GameScene{
     player.startGame(scene: self)
     isPlaying = true
     player.isFlashing = false
-    pieceFactory.startCreating()
+    pieceFactory.startCreating(moveingNode: movingNode)
     
     UIView.animate(withDuration: 2.0, animations: {
       self.currentMenu?.alpha = 0.0
@@ -31,7 +32,7 @@ extension GameScene{
       currentMenu.removeFromSuperview()
     }
     isPlaying = false
-    mainNode.removeAllActions()
+    movingNode.removeAllActions()
     let gameOverMenu = GameOverView(frame: CGRect.zero)
     gameOverMenu.delegate = self
     
@@ -66,22 +67,22 @@ extension GameScene{
     //TODO animate out
     currentMenu?.removeFromSuperview()
     currentMenu = nil
-    mainNode.position = CGPoint(x: 0,y: 0)
+    movingNode.position = CGPoint(x: 0,y: 0)
     player.startGame(scene: self)
     
     //make sure main node is not already moving
-    mainNode.removeAllActions()
+    movingNode.removeAllActions()
     let myAction = SKAction.move(by: CGVector(dx: 0, dy: -150), duration: 1.0)
-    mainNode.run(SKAction.repeatForever(myAction) )
+    movingNode.run(SKAction.repeatForever(myAction) )
     
-    pieceFactory.startCreating()
+    pieceFactory.startCreating(moveingNode: movingNode)
     isPlaying = true
   }
   func createPlayer(){
     
     //TODO put this inside player
     
-    self.addChild(player)
+    self.staticNode.addChild(player)
   
     createTail()
   }

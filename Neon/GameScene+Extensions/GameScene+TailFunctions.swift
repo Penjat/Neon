@@ -7,14 +7,14 @@ extension GameScene{
   
   func createTail(){
     
-    let relPos = CGPoint(x:player.position.x,y:player.position.y - mainNode.position.y)
+    let relPos = CGPoint(x:player.position.x,y:player.position.y - movingNode.position.y)
     
     lastNode = TailPiece(position: relPos)
     
     
     
     
-    mainNode.addChild(lastNode!)
+    movingNode.addChild(lastNode!)
     tailArray.append(lastNode!)
     
     
@@ -64,7 +64,7 @@ extension GameScene{
         let actions = [wait,removeSlef]
         polygon.run(SKAction.sequence(actions))
         
-        mainNode.addChild(polygon)
+        movingNode.addChild(polygon)
         print("muta path = \(subArray.count)")
         print("the lines intersect")
         return

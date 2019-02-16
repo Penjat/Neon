@@ -7,6 +7,7 @@
 //
 
 import SpriteKit
+import CoreData
 
 class PieceNode: SKSpriteNode {
   //GamePiece, something the player can circle around
@@ -15,9 +16,11 @@ class PieceNode: SKSpriteNode {
   var points :Int!
   
   convenience init(piece: Piece ){
+    let pieceCollectType = CollectType.getCollectType(colorAsInt: Int(piece.color))
     
-    self.init(texture: nil, color: UIColor.blue, size: CGSize(width: 40.0, height: 40.0))
+    self.init(texture: nil, color: pieceCollectType.getColor(), size: CGSize(width: 40.0, height: 40.0))
     points = 50
+    collectType = pieceCollectType
     
   }
   
@@ -29,4 +32,5 @@ class PieceNode: SKSpriteNode {
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
   }
+  
 }

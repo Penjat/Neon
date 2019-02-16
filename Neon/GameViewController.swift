@@ -50,10 +50,7 @@ class GameViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
    
     
-    if let appDelegate = UIApplication.shared.delegate as? AppDelegate { let
-      levelDB = LevelDatabeaseCreator()
-      levelDB.setUpLevels(appDelegate: appDelegate)
-    }
+    
     
   }
 }

@@ -11,6 +11,7 @@ extension GameScene{
       print("the player hit a piece and should lose a life")
       
       player.dmgPlayer()
+      shakeScreen()
       if player.checkGameOver(){
         gameOver()
       }
@@ -19,6 +20,7 @@ extension GameScene{
       print("the player hit a piece and should lose a life")
       
       player.dmgPlayer()
+      shakeScreen()
       if player.checkGameOver(){
         gameOver()
       }
@@ -46,6 +48,7 @@ extension GameScene{
       }else{
         //dmg player
         player.dmgPlayer()
+        shakeScreen()
         if player.checkGameOver(){
           gameOver()
         }

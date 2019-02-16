@@ -25,7 +25,7 @@ class Player: SKSpriteNode {
     let y = 60.0 - scene.frame.height/2
     scoreLabel.position = CGPoint(x:x , y:y)
     scoreLabel.fontSize = 50.0
-    scene.addChild(scoreLabel)
+    scene.staticNode.addChild(scoreLabel)
     
     physicsBody = SKPhysicsBody(rectangleOf: CGSize(width:20,height:20))
     physicsBody?.collisionBitMask = 2
@@ -83,7 +83,7 @@ class Player: SKSpriteNode {
     let y = 40.0 - scene.frame.height/2
     life.position = CGPoint(x:x , y:y)
     lives.append(life)
-    scene.addChild(life)
+    scene.staticNode.addChild(life)
   }
   
   func removeLife(){

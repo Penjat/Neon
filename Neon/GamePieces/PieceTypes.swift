@@ -34,4 +34,19 @@ enum CollectType{
       return UIColor.green
     }
   }
+  
+  static func getCollectType(colorAsInt:Int)->CollectType{
+    switch(colorAsInt){
+    case 0:
+      return .DamagePlayer
+    case 1:
+      return .Points
+    case 2:
+      return .PointsMultiplier
+    case 3:
+      return .PointInverseMultiplier
+    default:
+      return .Points
+    }
+  }
 }

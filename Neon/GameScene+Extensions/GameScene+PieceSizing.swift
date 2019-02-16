@@ -18,6 +18,6 @@ extension GameScene{
   func getPositionForScreen(position: CGPoint) -> CGPoint{
     let ratio = frame.width / 32.0
     
-    return CGPoint(x: ( position.x  * ratio), y: position.y * ratio - mainNode.position.y + frame.height/2.0)
+    return CGPoint(x: ( position.x  * ratio), y: position.y * ratio - movingNode.position.y + frame.height/2.0)
   }
 }
