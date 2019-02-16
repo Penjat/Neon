@@ -6,7 +6,7 @@
         <attribute name="direction" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="music" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="sections" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Section" syncable="YES"/>
+        <relationship name="sections" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Section" syncable="YES"/>
     </entity>
     <entity name="Piece" representedClassName="Piece" syncable="YES" codeGenerationType="class">
         <attribute name="color" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -21,11 +21,11 @@
         <attribute name="distance" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="orderId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="speed" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="segments" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Segment" syncable="YES"/>
+        <relationship name="segments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Segment" syncable="YES"/>
     </entity>
     <entity name="Segment" representedClassName="Segment" syncable="YES" codeGenerationType="class">
         <attribute name="frequency" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="pieces" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Piece" syncable="YES"/>
+        <relationship name="pieces" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Piece" syncable="YES"/>
     </entity>
     <elements>
         <element name="Level" positionX="-156.35546875" positionY="-17.671875" width="128" height="135"/>
