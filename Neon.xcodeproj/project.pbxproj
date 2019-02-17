@@ -13,7 +13,6 @@
 		0B5E03852218838A00606FC6 /* GameScene+ScreenEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5E03842218838A00606FC6 /* GameScene+ScreenEffects.swift */; };
 		0B5E03872218A7D400606FC6 /* Player+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5E03862218A7D400606FC6 /* Player+Animations.swift */; };
 		0B5E03892218CEEE00606FC6 /* ClearShapeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5E03882218CEEE00606FC6 /* ClearShapeNode.swift */; };
-		0B5E038B22190D7900606FC6 /* hitsound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0B5E038A22190D7900606FC6 /* hitsound.wav */; };
 		0B5E038E221913EB00606FC6 /* pickUpSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0B5E038D221913EA00606FC6 /* pickUpSound.wav */; };
 		0B729199220CA1DB008CAF41 /* PieceNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B729198220CA1DB008CAF41 /* PieceNode.swift */; };
 		0B72919B220CA87F008CAF41 /* GameScene+Collisions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B72919A220CA87F008CAF41 /* GameScene+Collisions.swift */; };
@@ -46,7 +45,6 @@
 		0B5E03842218838A00606FC6 /* GameScene+ScreenEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+ScreenEffects.swift"; sourceTree = "<group>"; };
 		0B5E03862218A7D400606FC6 /* Player+Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Player+Animations.swift"; sourceTree = "<group>"; };
 		0B5E03882218CEEE00606FC6 /* ClearShapeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearShapeNode.swift; sourceTree = "<group>"; };
-		0B5E038A22190D7900606FC6 /* hitsound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = hitsound.wav; path = "Neon/GameScene+Extensions/Sounds/hitsound.wav"; sourceTree = SOURCE_ROOT; };
 		0B5E038D221913EA00606FC6 /* pickUpSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pickUpSound.wav; sourceTree = SOURCE_ROOT; };
 		0B729198220CA1DB008CAF41 /* PieceNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceNode.swift; sourceTree = "<group>"; };
 		0B72919A220CA87F008CAF41 /* GameScene+Collisions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Collisions.swift"; sourceTree = "<group>"; };
@@ -72,6 +70,7 @@
 		0BB11FAE220B36570089AD1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0BB11FB1220B36570089AD1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0BB11FB3220B36570089AD1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0BF35BC722191F030079D052 /* Hit_Hurt.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Hit_Hurt.wav; path = /Users/spencersymington/Desktop/Projects/Neon/Neon/Sounds/Hit_Hurt.wav; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,8 +87,8 @@
 		0B5E038C22190D8A00606FC6 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				0BF35BC722191F030079D052 /* Hit_Hurt.wav */,
 				0B5E038D221913EA00606FC6 /* pickUpSound.wav */,
-				0B5E038A22190D7900606FC6 /* hitsound.wav */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -118,7 +117,6 @@
 				0B7291AC220E2533008CAF41 /* GameScene+StartAndEnd.swift */,
 				0B75BAC32210CBED00927098 /* GameScene+PieceSizing.swift */,
 				0B5E03842218838A00606FC6 /* GameScene+ScreenEffects.swift */,
-				0B5E038C22190D8A00606FC6 /* Sounds */,
 			);
 			path = "GameScene+Extensions";
 			sourceTree = "<group>";
@@ -172,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				0B7291B4220E4273008CAF41 /* Enums */,
+				0B5E038C22190D8A00606FC6 /* Sounds */,
 				0B7291A7220E162F008CAF41 /* Menus */,
 				0B7291A6220E160B008CAF41 /* LevelManaging */,
 				0B7291A1220CB7CD008CAF41 /* GameScene+Extensions */,
@@ -251,7 +250,6 @@
 				0B7291AF220E2813008CAF41 /* gameOverMenu.xib in Resources */,
 				0BB11FAF220B36570089AD1C /* Assets.xcassets in Resources */,
 				0B7291A9220E1645008CAF41 /* titleMenu.xib in Resources */,
-				0B5E038B22190D7900606FC6 /* hitsound.wav in Resources */,
 				0BB11FB2220B36570089AD1C /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

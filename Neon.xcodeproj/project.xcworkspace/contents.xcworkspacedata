@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Neon.xcodeproj">
+      location = "group:/Users/spencersymington/Desktop/Projects/Neon/Neon/Sounds/Hit_Hurt.wav">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>

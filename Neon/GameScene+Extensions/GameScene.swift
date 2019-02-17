@@ -4,8 +4,8 @@ import SpriteKit
 import GameplayKit
 
 class GameScene: SKScene , SKPhysicsContactDelegate , MenuDelegate {
-  var hurtSound = SKAction.playSoundFileNamed("hitsound.wav", waitForCompletion: false)
-  var pickUpSound = SKAction.playSoundFileNamed("pickUpSound.wav", waitForCompletion: false)
+  var hurtSound = SKAction.playSoundFileNamed("Hit_Hurt.wav", waitForCompletion: false)
+  var pickUpSound = SKAction.playSoundFileNamed("pickUpSound.wav", waitForCompletion: true)
   
   
   
