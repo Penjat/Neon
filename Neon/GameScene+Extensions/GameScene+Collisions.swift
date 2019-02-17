@@ -11,6 +11,7 @@ extension GameScene{
       print("the player hit a piece and should lose a life")
       
       player.dmgPlayer()
+      run(hurtSound)
       shakeScreen()
       if player.checkGameOver(){
         gameOver()
@@ -20,6 +21,7 @@ extension GameScene{
       print("the player hit a piece and should lose a life")
       
       player.dmgPlayer()
+      run(hurtSound)
       shakeScreen()
       if player.checkGameOver(){
         gameOver()
@@ -43,6 +45,8 @@ extension GameScene{
     
     if let piece = body.node as? PieceNode , let clearShape = clearShapeBody.node as? ClearShapeNode{
       clearShape.add(node: piece)
+      run(pickUpSound)
+      
       piece.clear()
       if piece.collectType == CollectType.Points {
         //add to score
@@ -51,6 +55,7 @@ extension GameScene{
       }else{
         //dmg player
         player.dmgPlayer()
+        run(hurtSound)
         shakeScreen()
         if player.checkGameOver(){
           gameOver()
