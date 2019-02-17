@@ -53,6 +53,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate , MenuDelegate {
     
     let titleMenu = TitleMenuView(frame: CGRect.zero)
     titleMenu.alpha = 0.0
+    
     UIView.animate(withDuration: 1.0, delay: 5.0, options:[], animations: {
       titleMenu.alpha = 1.0
       }, completion: nil)

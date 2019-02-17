@@ -21,13 +21,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="the little comet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZT6-8E-Zci">
-                    <rect key="frame" x="111" y="329" width="153" height="29"/>
+                    <rect key="frame" x="34.5" y="329" width="153" height="29"/>
                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                     <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HrJ-CS-axr">
-                    <rect key="frame" x="232" y="366" width="32" height="30"/>
+                    <rect key="frame" x="155.5" y="366" width="32" height="30"/>
                     <state key="normal" title="start">
                         <color key="titleColor" red="1" green="0.0" blue="0.1158826245" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
@@ -37,8 +37,8 @@
                 </button>
             </subviews>
             <constraints>
-                <constraint firstItem="ZT6-8E-Zci" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="PEd-aU-hYQ"/>
                 <constraint firstItem="HrJ-CS-axr" firstAttribute="top" secondItem="ZT6-8E-Zci" secondAttribute="bottom" constant="8" id="aYL-4Z-o1g"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="centerX" secondItem="ZT6-8E-Zci" secondAttribute="trailing" id="c5u-mh-rjj"/>
                 <constraint firstItem="HrJ-CS-axr" firstAttribute="trailing" secondItem="ZT6-8E-Zci" secondAttribute="trailing" id="wui-lu-R6B"/>
                 <constraint firstItem="ZT6-8E-Zci" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="zs1-eI-KA5"/>
             </constraints>

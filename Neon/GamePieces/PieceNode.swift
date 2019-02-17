@@ -33,4 +33,14 @@ class PieceNode: SKSpriteNode {
     super.init(coder: aDecoder)
   }
   
+  func clear(){
+    physicsBody = nil
+    let fadeOut = SKAction.fadeOut(withDuration: 1.0)
+    let grow = SKAction.scale(by: 1.8, duration: 1.0)
+    let clearAction = SKAction.group([fadeOut,grow])
+    let remove = SKAction.removeFromParent()
+    
+    run(SKAction.sequence([clearAction,remove]))
+  }
+  
 }

@@ -12,6 +12,7 @@
 		0B5E03812217794000606FC6 /* LevelDatabaseCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5E03802217794000606FC6 /* LevelDatabaseCreator.swift */; };
 		0B5E03852218838A00606FC6 /* GameScene+ScreenEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5E03842218838A00606FC6 /* GameScene+ScreenEffects.swift */; };
 		0B5E03872218A7D400606FC6 /* Player+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5E03862218A7D400606FC6 /* Player+Animations.swift */; };
+		0B5E03892218CEEE00606FC6 /* ClearShapeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5E03882218CEEE00606FC6 /* ClearShapeNode.swift */; };
 		0B729199220CA1DB008CAF41 /* PieceNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B729198220CA1DB008CAF41 /* PieceNode.swift */; };
 		0B72919B220CA87F008CAF41 /* GameScene+Collisions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B72919A220CA87F008CAF41 /* GameScene+Collisions.swift */; };
 		0B72919D220CA8B1008CAF41 /* GameScene+Touches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B72919C220CA8B1008CAF41 /* GameScene+Touches.swift */; };
@@ -42,6 +43,7 @@
 		0B5E03802217794000606FC6 /* LevelDatabaseCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelDatabaseCreator.swift; sourceTree = "<group>"; };
 		0B5E03842218838A00606FC6 /* GameScene+ScreenEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+ScreenEffects.swift"; sourceTree = "<group>"; };
 		0B5E03862218A7D400606FC6 /* Player+Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Player+Animations.swift"; sourceTree = "<group>"; };
+		0B5E03882218CEEE00606FC6 /* ClearShapeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearShapeNode.swift; sourceTree = "<group>"; };
 		0B729198220CA1DB008CAF41 /* PieceNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceNode.swift; sourceTree = "<group>"; };
 		0B72919A220CA87F008CAF41 /* GameScene+Collisions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Collisions.swift"; sourceTree = "<group>"; };
 		0B72919C220CA8B1008CAF41 /* GameScene+Touches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Touches.swift"; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				0B72919E220CB784008CAF41 /* Player.swift */,
 				0B5E03862218A7D400606FC6 /* Player+Animations.swift */,
 				0B2A9891220E9FD90048DC80 /* TailPiece.swift */,
+				0B5E03882218CEEE00606FC6 /* ClearShapeNode.swift */,
 				0B75BAC122109D1000927098 /* PieceTypes.swift */,
 			);
 			path = GamePieces;
@@ -253,6 +256,7 @@
 				0B75BAC222109D1000927098 /* PieceTypes.swift in Sources */,
 				0B5E03852218838A00606FC6 /* GameScene+ScreenEffects.swift in Sources */,
 				0BB11FAA220B36560089AD1C /* GameViewController.swift in Sources */,
+				0B5E03892218CEEE00606FC6 /* ClearShapeNode.swift in Sources */,
 				0B72919F220CB784008CAF41 /* Player.swift in Sources */,
 				0B7291AB220E1743008CAF41 /* TitleMenuView.swift in Sources */,
 				0B7291B6220E429C008CAF41 /* CollisionCategories.swift in Sources */,

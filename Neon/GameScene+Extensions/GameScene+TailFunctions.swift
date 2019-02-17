@@ -50,21 +50,19 @@ extension GameScene{
           mutaPath.addLine(to: node.position)
         }
         //TODO can just make an empty Node
-        let polygon = SKShapeNode()
-        polygon.path = mutaPath.copy()
+        let clearShapeNode = ClearShapeNode()
+        //clearShapeNode.path = mutaPath.copy()
         //polygon.fillColor = UIColor.green
-        polygon.strokeColor = UIColor.blue
-        polygon.physicsBody = SKPhysicsBody(polygonFrom: mutaPath.copy()!)
-        polygon.physicsBody?.categoryBitMask = TAIL_CATAGORY
-        polygon.physicsBody?.collisionBitMask = 0
-        polygon.physicsBody?.contactTestBitMask = 1
+        clearShapeNode.strokeColor = UIColor.blue
+        clearShapeNode.physicsBody = SKPhysicsBody(polygonFrom: mutaPath.copy()!)
+        clearShapeNode.physicsBody?.categoryBitMask = TAIL_CATAGORY
+        clearShapeNode.physicsBody?.collisionBitMask = 0
+        clearShapeNode.physicsBody?.contactTestBitMask = 1
         
-        let wait = SKAction.wait(forDuration: 0.5)
-        let removeSlef = SKAction.removeFromParent()
-        let actions = [wait,removeSlef]
-        polygon.run(SKAction.sequence(actions))
+        clearShapeNode.setUp(player: player)
         
-        movingNode.addChild(polygon)
+        
+        movingNode.addChild(clearShapeNode)
         print("muta path = \(subArray.count)")
         print("the lines intersect")
         return
