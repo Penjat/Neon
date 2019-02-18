@@ -11,11 +11,11 @@ import SpriteKit
 class ClearShapeNode : SKShapeNode{
   var pieceNodes = [PieceNode]()
   
-  func setUp(player:Player){
-    let wait = SKAction.wait(forDuration: 0.2)
+  func setUp(scene:GameScene){
+    let wait = SKAction.wait(forDuration: 0.1)
     let removeSlef = SKAction.removeFromParent()
     let addUp = SKAction.run({
-      self.addUpPoints(player: player)
+      self.addUpPoints(scene: scene)
     })
     let actions = [wait,addUp,SKAction.wait(forDuration: 1.0),SKAction.removeFromParent()]
     run(SKAction.sequence(actions))
@@ -24,7 +24,7 @@ class ClearShapeNode : SKShapeNode{
     pieceNodes.append(node)
     
   }
-  func addUpPoints(player:Player){
+  func addUpPoints(scene:GameScene){
     print("adding up points \(pieceNodes.count)")
     physicsBody = nil
     var points = 0
@@ -41,11 +41,12 @@ class ClearShapeNode : SKShapeNode{
     if pieceNodes.count == 0{
       return
     }
+    scene.play(sound: Sound.Collect)
     x = x / CGFloat(pieceNodes.count)
     y = y / CGFloat(pieceNodes.count)
     
     let pointsWithMulti = pieceNodes.count*points
-    player.addToScore(points: points)
+    scene.player.addToScore(points: points)
     let pointsLabel = SKLabelNode(text: "\(points)x\(pieceNodes.count)")
     
     pointsLabel.fontColor = UIColor.white

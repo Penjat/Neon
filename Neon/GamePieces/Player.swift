@@ -21,6 +21,7 @@ class Player: SKSpriteNode {
   convenience init(scene: GameScene) {
     self.init(texture: nil, color: UIColor.blue, size: CGSize(width:20,height:20 ) )
     
+    position = CGPoint(x:0,y:-scene.frame.height/2)
     let x = -50.0 + scene.frame.width/2
     let y = 60.0 - scene.frame.height/2
     scoreLabel.position = CGPoint(x:x , y:y)

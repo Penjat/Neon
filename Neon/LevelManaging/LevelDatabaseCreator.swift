@@ -1,10 +1,4 @@
-//
-//  LevelDatabaseCreator.swift
-//  Neon
-//
-//  Created by Spencer Symington on 2019-02-15.
-//  Copyright © 2019 Spencer Symington. All rights reserved.
-//
+
 
 import CoreData
 
@@ -91,17 +85,40 @@ class LevelDatabeaseCreator{
     //create the segment
     let segment3 = Segment(context: context)
     segment3.frequency = 50.0
-    segment1.spacing = 10.0
-    segment3.pieces = [piece5,piece6]
+    segment3.spacing = 60.0
+    segment3.pieces = [piece5]
+    
+    let segment4 = Segment(context: context)
+    segment4.frequency = 50.0
+    segment4.spacing = 40.0
+    segment4.pieces = [piece6]
     
     
     
     //create section
     let section1 = Section(context: context)
     section1.speed = 30.0
-    section1.distance = 300.0
+    section1.distance = 500.0
     section1.orderId = 0
-    section1.segments = [segment1,segment2,segment3]
+    section1.segments = [segment1]
+    
+    let section2 = Section(context: context)
+    section2.speed = 30.0
+    section2.distance = 500.0
+    section2.orderId = 1
+    section2.segments = [segment2]
+    
+    let section3 = Section(context: context)
+    section3.speed = 30.0
+    section3.distance = 500.0
+    section3.orderId = 0
+    section3.segments = [segment3]
+    
+    let section4 = Section(context: context)
+    section4.speed = 30.0
+    section4.distance = 500.0
+    section4.orderId = 1
+    section4.segments = [segment4]
     
     //create level 1
     let level1 = Level(context: context)
@@ -110,7 +127,15 @@ class LevelDatabeaseCreator{
     level1.difficulty = 1
     level1.direction = 0
     level1.music = 1
-    level1.sections = [section1]
+    level1.sections = [section1,section2]
+    
+    let level2 = Level(context: context)
+    level2.name = "level 2"
+    level2.background = 0
+    level2.difficulty = 1
+    level2.direction = 0
+    level2.music = 1
+    level2.sections = [section3,section4]
     
     
     

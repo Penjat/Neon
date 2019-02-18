@@ -59,7 +59,7 @@ extension GameScene{
         clearShapeNode.physicsBody?.collisionBitMask = 0
         clearShapeNode.physicsBody?.contactTestBitMask = 1
         
-        clearShapeNode.setUp(player: player)
+        clearShapeNode.setUp(scene: self)
         
         
         movingNode.addChild(clearShapeNode)

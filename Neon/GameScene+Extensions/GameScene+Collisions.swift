@@ -45,7 +45,7 @@ extension GameScene{
     
     if let piece = body.node as? PieceNode , let clearShape = clearShapeBody.node as? ClearShapeNode{
       clearShape.add(node: piece)
-      run(pickUpSound)
+      
       
       piece.clear()
       if piece.collectType == CollectType.Points {
