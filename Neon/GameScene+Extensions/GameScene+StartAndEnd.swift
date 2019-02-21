@@ -73,6 +73,8 @@ extension GameScene{
     movingNode.position = CGPoint(x: 0,y: 0)
     player.startGame(scene: self)
     
+    pieceFactory.reset()
+    
     //make sure main node is not already moving
     movingNode.removeAllActions()
     let myAction = SKAction.move(by: CGVector(dx: 0, dy: -150), duration: 1.0)

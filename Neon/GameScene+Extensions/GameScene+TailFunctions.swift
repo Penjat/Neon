@@ -32,7 +32,7 @@ extension GameScene{
         //let spot = SKSpriteNode(color: UIColor.green, size: CGSize(width: 20, height: 20))
         //spot.position = intersectPoint!
         //mainNode.addChild(spot)
-        let subArray = tailArray[i ..< tailArray.count-1]
+        let subArray = tailArray[i ... tailArray.count-1]
         tailArray = [TailPiece]() + tailArray[0...i]
         let mutaPath = CGMutablePath()
         

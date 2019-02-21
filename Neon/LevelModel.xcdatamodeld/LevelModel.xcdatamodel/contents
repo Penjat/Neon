@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="1">
+    <entity name="GameInfo" representedClassName="GameInfo" syncable="YES" codeGenerationType="class">
+        <attribute name="levels_installed" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
     <entity name="Level" representedClassName="Level" syncable="YES" codeGenerationType="class">
         <attribute name="background" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="difficulty" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -33,5 +36,6 @@
         <element name="Piece" positionX="190.12109375" positionY="118.734375" width="128" height="150"/>
         <element name="Section" positionX="2.91015625" positionY="39.25390625" width="128" height="105"/>
         <element name="Segment" positionX="32.76953125" positionY="161.93359375" width="128" height="90"/>
+        <element name="GameInfo" positionX="18" positionY="99" width="128" height="60"/>
     </elements>
 </model>

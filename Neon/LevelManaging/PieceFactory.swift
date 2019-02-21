@@ -65,10 +65,18 @@ class PieceFactory{
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let request: NSFetchRequest<Level> = Level.fetchRequest()
     let context = appDelegate.persistentContainer.viewContext
-    request.predicate = NSPredicate(format: "ANY name == %@", "level \(curLevelIndex)")
+//    request.predicate = NSPredicate(format: "ANY name == %@", "level \(curLevelIndex)")
     
     if let results = try? context.fetch(request) , results.count > 0{
-      currentLevelManager.set(curLevel: results[0])
+      for level in results{
+        print("level name = \(level.name)")
+        if level.name == "level \(curLevelIndex)" {
+          currentLevelManager.set(curLevel: level)
+          print("found level")
+          return
+        }
+      }
+      
     }else{
       print("was unable to load level \(curLevelIndex)")
     }
@@ -84,6 +92,12 @@ class PieceFactory{
     }
     
     
+  }
+  func reset(){
+    //resets to level 1
+    print("reseting level")
+    curLevelIndex = 1
+    getNextLevel()
   }
   
   
