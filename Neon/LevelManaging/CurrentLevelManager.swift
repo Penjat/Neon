@@ -25,6 +25,7 @@ class CurrentLevelManager{
     curSectionIndex = 0
     
     sectionArray =  (curLevel.sections?.allObjects as! [Section])
+    print("section array count = \(sectionArray.count)")
     segmentArray = (sectionArray[0].segments!.allObjects as! [Segment])
     
   }

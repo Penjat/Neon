@@ -19,6 +19,18 @@ class LevelDatabeaseCreator{
     let gameInfo = GameInfo(context: context)
     gameInfo.levels_installed = true
     
+    
+    //-----------------------Level 1---------------------------
+    
+    let level1 = Level(context: context)
+    level1.name = "level 1"
+    level1.background = 0
+    level1.difficulty = 1
+    level1.direction = 0
+    level1.music = 1
+//    level1.sections = [section1,section2]
+    
+    
     //create the pieces
     let piece1 = Piece(context: context)
     piece1.type = 0
@@ -107,12 +119,14 @@ class LevelDatabeaseCreator{
     section1.distance = 500.0
     section1.orderId = 0
     section1.segments = [segment1]
+    level1.add(section: section1)
     
     let section2 = Section(context: context)
     section2.speed = 30.0
     section2.distance = 500.0
     section2.orderId = 1
     section2.segments = [segment2]
+    level1.add(section: section2)
     
     let section3 = Section(context: context)
     section3.speed = 30.0
@@ -126,14 +140,7 @@ class LevelDatabeaseCreator{
     section4.orderId = 1
     section4.segments = [segment4]
     
-    //create level 1
-    let level1 = Level(context: context)
-    level1.name = "level 1"
-    level1.background = 0
-    level1.difficulty = 1
-    level1.direction = 0
-    level1.music = 1
-    level1.sections = [section1,section2]
+    
     
     let level2 = Level(context: context)
     level2.name = "level 2"
