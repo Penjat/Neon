@@ -147,13 +147,10 @@
 			isa = PBXGroup;
 			children = (
 				0B5E03802217794000606FC6 /* LevelDatabaseCreator.swift */,
-				0B7291A4220DF14A008CAF41 /* PieceFactory.swift */,
-				0BE11E20221F63FD00F2E068 /* Levels */,
 				0B6016AD2219EB4B0078EE5A /* CurrentLevelManager.swift */,
-				0BE11E18221F4D8400F2E068 /* Level+EasyCreation.swift */,
-				0BE11E1A221F502B00F2E068 /* Section+EasyCreation.swift */,
-				0BE11E1C221F55FD00F2E068 /* Segment+EasyCreation.swift */,
-				0BE11E1E221F618D00F2E068 /* Piece+EasyCreation.swift */,
+				0B7291A4220DF14A008CAF41 /* PieceFactory.swift */,
+				0BE11E27221F6C6100F2E068 /* Data Model Extentions */,
+				0BE11E20221F63FD00F2E068 /* Levels */,
 			);
 			path = LevelManaging;
 			sourceTree = "<group>";
@@ -222,6 +219,17 @@
 				0BE11E25221F651E00F2E068 /* Level3.swift */,
 			);
 			path = Levels;
+			sourceTree = "<group>";
+		};
+		0BE11E27221F6C6100F2E068 /* Data Model Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				0BE11E18221F4D8400F2E068 /* Level+EasyCreation.swift */,
+				0BE11E1A221F502B00F2E068 /* Section+EasyCreation.swift */,
+				0BE11E1C221F55FD00F2E068 /* Segment+EasyCreation.swift */,
+				0BE11E1E221F618D00F2E068 /* Piece+EasyCreation.swift */,
+			);
+			path = "Data Model Extentions";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

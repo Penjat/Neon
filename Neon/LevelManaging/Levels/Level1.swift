@@ -7,7 +7,8 @@ extension LevelDatabeaseCreator{
   func createLevel1(context:NSManagedObjectContext){
     
     
-    let level1 = Level(context: context)
+    //let level1 = Level(context: context)
+    let level1 = Level.create(context: context )
     level1.name = "level 1"
     level1.background = 0
     level1.difficulty = 1
