@@ -25,6 +25,7 @@ class CurrentLevelManager{
     curSectionIndex = 0
     
     sectionArray =  (curLevel.sections?.allObjects as! [Section])
+    sectionArray = sectionArray.sorted(by: { $0.orderId < $1.orderId })
     print("section array count = \(sectionArray.count)")
     segmentArray = (sectionArray[0].segments!.allObjects as! [Segment])
     
@@ -41,6 +42,7 @@ class CurrentLevelManager{
   func getPieces()-> [Piece]{
     
     let segment = segmentArray.randomElement()
+    //print("segment array count \(segmentArray.count)")
     distUntilNextSegment -= CGFloat(segment!.spacing*10)
     
     return segment!.pieces!.allObjects as! [Piece]

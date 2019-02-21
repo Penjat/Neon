@@ -38,8 +38,9 @@
 		0BB11FAD220B36560089AD1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BB11FAB220B36560089AD1C /* Main.storyboard */; };
 		0BB11FAF220B36570089AD1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BB11FAE220B36570089AD1C /* Assets.xcassets */; };
 		0BB11FB2220B36570089AD1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BB11FB0220B36570089AD1C /* LaunchScreen.storyboard */; };
-		0BE11E19221F4D8400F2E068 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE11E18221F4D8400F2E068 /* Level.swift */; };
-		0BE11E1B221F502B00F2E068 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE11E1A221F502B00F2E068 /* Section.swift */; };
+		0BE11E19221F4D8400F2E068 /* Level+EasyCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE11E18221F4D8400F2E068 /* Level+EasyCreation.swift */; };
+		0BE11E1B221F502B00F2E068 /* Section+EasyCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE11E1A221F502B00F2E068 /* Section+EasyCreation.swift */; };
+		0BE11E1D221F55FD00F2E068 /* Segment+EasyCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE11E1C221F55FD00F2E068 /* Segment+EasyCreation.swift */; };
 		0BF35BC922192ABA0079D052 /* hurt.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0BF35BC822192ABA0079D052 /* hurt.wav */; };
 /* End PBXBuildFile section */
 
@@ -77,8 +78,9 @@
 		0BB11FAE220B36570089AD1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0BB11FB1220B36570089AD1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0BB11FB3220B36570089AD1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0BE11E18221F4D8400F2E068 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
-		0BE11E1A221F502B00F2E068 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		0BE11E18221F4D8400F2E068 /* Level+EasyCreation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Level+EasyCreation.swift"; sourceTree = "<group>"; };
+		0BE11E1A221F502B00F2E068 /* Section+EasyCreation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Section+EasyCreation.swift"; sourceTree = "<group>"; };
+		0BE11E1C221F55FD00F2E068 /* Segment+EasyCreation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Segment+EasyCreation.swift"; sourceTree = "<group>"; };
 		0BF35BC722191F030079D052 /* Hit_Hurt.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Hit_Hurt.wav; path = /Users/spencersymington/Desktop/Projects/Neon/Neon/Sounds/Hit_Hurt.wav; sourceTree = "<absolute>"; };
 		0BF35BC822192ABA0079D052 /* hurt.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = hurt.wav; path = Neon/Sounds/hurt.wav; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -139,8 +141,9 @@
 				0B5E03802217794000606FC6 /* LevelDatabaseCreator.swift */,
 				0B7291A4220DF14A008CAF41 /* PieceFactory.swift */,
 				0B6016AD2219EB4B0078EE5A /* CurrentLevelManager.swift */,
-				0BE11E18221F4D8400F2E068 /* Level.swift */,
-				0BE11E1A221F502B00F2E068 /* Section.swift */,
+				0BE11E18221F4D8400F2E068 /* Level+EasyCreation.swift */,
+				0BE11E1A221F502B00F2E068 /* Section+EasyCreation.swift */,
+				0BE11E1C221F55FD00F2E068 /* Segment+EasyCreation.swift */,
 			);
 			path = LevelManaging;
 			sourceTree = "<group>";
@@ -284,16 +287,17 @@
 				0B7291B3220E2B06008CAF41 /* MenuDelegateProtocol.swift in Sources */,
 				0BB11FA8220B36560089AD1C /* GameScene.swift in Sources */,
 				0B7291A5220DF14A008CAF41 /* PieceFactory.swift in Sources */,
-				0BE11E1B221F502B00F2E068 /* Section.swift in Sources */,
+				0BE11E1B221F502B00F2E068 /* Section+EasyCreation.swift in Sources */,
 				0B75BAC222109D1000927098 /* PieceTypes.swift in Sources */,
 				0B5E03852218838A00606FC6 /* GameScene+ScreenEffects.swift in Sources */,
 				0B6016AC2219DFC90078EE5A /* GameScene+Sonuds.swift in Sources */,
 				0BB11FAA220B36560089AD1C /* GameViewController.swift in Sources */,
 				0B5E03892218CEEE00606FC6 /* ClearShapeNode.swift in Sources */,
 				0B72919F220CB784008CAF41 /* Player.swift in Sources */,
-				0BE11E19221F4D8400F2E068 /* Level.swift in Sources */,
+				0BE11E19221F4D8400F2E068 /* Level+EasyCreation.swift in Sources */,
 				0B7291AB220E1743008CAF41 /* TitleMenuView.swift in Sources */,
 				0B7291B6220E429C008CAF41 /* CollisionCategories.swift in Sources */,
+				0BE11E1D221F55FD00F2E068 /* Segment+EasyCreation.swift in Sources */,
 				0B75BAC42210CBED00927098 /* GameScene+PieceSizing.swift in Sources */,
 				0B7291AD220E2533008CAF41 /* GameScene+StartAndEnd.swift in Sources */,
 				0B729199220CA1DB008CAF41 /* PieceNode.swift in Sources */,

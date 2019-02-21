@@ -31,6 +31,25 @@ class LevelDatabeaseCreator{
 //    level1.sections = [section1,section2]
     
     
+    
+    //create section
+    let section1 = Section(context: context)
+    section1.speed = 30.0
+    section1.distance = 500.0
+    section1.orderId = 0
+    //section1.segments = [segment1]
+    level1.add(section: section1)
+    
+    let section2 = Section(context: context)
+    section2.speed = 30.0
+    section2.distance = 500.0
+    section2.orderId = 1
+    //section2.segments = [segment2]
+    level1.add(section: section2)
+    
+    
+    
+    
     //create the pieces
     let piece1 = Piece(context: context)
     piece1.type = 0
@@ -55,6 +74,7 @@ class LevelDatabeaseCreator{
     segment1.frequency = 50.0
     segment1.spacing = 20.0
     segment1.pieces = [piece1,piece2]
+    section1.add(segment: segment1)
     
     //create the pieces
     let piece3 = Piece(context: context)
@@ -80,6 +100,7 @@ class LevelDatabeaseCreator{
     segment2.frequency = 50.0
     segment2.spacing = 20.0
     segment2.pieces = [piece3,piece4]
+    section2.add(segment: segment2)
     
     //create the pieces
     let piece5 = Piece(context: context)
@@ -112,22 +133,6 @@ class LevelDatabeaseCreator{
     segment4.pieces = [piece6]
     
     
-    
-    //create section
-    let section1 = Section(context: context)
-    section1.speed = 30.0
-    section1.distance = 500.0
-    section1.orderId = 0
-    section1.segments = [segment1]
-    level1.add(section: section1)
-    
-    let section2 = Section(context: context)
-    section2.speed = 30.0
-    section2.distance = 500.0
-    section2.orderId = 1
-    section2.segments = [segment2]
-    level1.add(section: section2)
-    
     let section3 = Section(context: context)
     section3.speed = 30.0
     section3.distance = 500.0
@@ -140,6 +145,7 @@ class LevelDatabeaseCreator{
     section4.orderId = 1
     section4.segments = [segment4]
     
+    //----------------------Level 2----------------------------------
     
     
     let level2 = Level(context: context)
