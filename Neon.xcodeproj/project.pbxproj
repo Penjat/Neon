@@ -41,6 +41,10 @@
 		0BE11E19221F4D8400F2E068 /* Level+EasyCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE11E18221F4D8400F2E068 /* Level+EasyCreation.swift */; };
 		0BE11E1B221F502B00F2E068 /* Section+EasyCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE11E1A221F502B00F2E068 /* Section+EasyCreation.swift */; };
 		0BE11E1D221F55FD00F2E068 /* Segment+EasyCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE11E1C221F55FD00F2E068 /* Segment+EasyCreation.swift */; };
+		0BE11E1F221F618D00F2E068 /* Piece+EasyCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE11E1E221F618D00F2E068 /* Piece+EasyCreation.swift */; };
+		0BE11E22221F648D00F2E068 /* Level1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE11E21221F648D00F2E068 /* Level1.swift */; };
+		0BE11E24221F650E00F2E068 /* Level2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE11E23221F650E00F2E068 /* Level2.swift */; };
+		0BE11E26221F651E00F2E068 /* Level3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE11E25221F651E00F2E068 /* Level3.swift */; };
 		0BF35BC922192ABA0079D052 /* hurt.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0BF35BC822192ABA0079D052 /* hurt.wav */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +85,10 @@
 		0BE11E18221F4D8400F2E068 /* Level+EasyCreation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Level+EasyCreation.swift"; sourceTree = "<group>"; };
 		0BE11E1A221F502B00F2E068 /* Section+EasyCreation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Section+EasyCreation.swift"; sourceTree = "<group>"; };
 		0BE11E1C221F55FD00F2E068 /* Segment+EasyCreation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Segment+EasyCreation.swift"; sourceTree = "<group>"; };
+		0BE11E1E221F618D00F2E068 /* Piece+EasyCreation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Piece+EasyCreation.swift"; sourceTree = "<group>"; };
+		0BE11E21221F648D00F2E068 /* Level1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level1.swift; sourceTree = "<group>"; };
+		0BE11E23221F650E00F2E068 /* Level2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level2.swift; sourceTree = "<group>"; };
+		0BE11E25221F651E00F2E068 /* Level3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level3.swift; sourceTree = "<group>"; };
 		0BF35BC722191F030079D052 /* Hit_Hurt.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Hit_Hurt.wav; path = /Users/spencersymington/Desktop/Projects/Neon/Neon/Sounds/Hit_Hurt.wav; sourceTree = "<absolute>"; };
 		0BF35BC822192ABA0079D052 /* hurt.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = hurt.wav; path = Neon/Sounds/hurt.wav; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -140,10 +148,12 @@
 			children = (
 				0B5E03802217794000606FC6 /* LevelDatabaseCreator.swift */,
 				0B7291A4220DF14A008CAF41 /* PieceFactory.swift */,
+				0BE11E20221F63FD00F2E068 /* Levels */,
 				0B6016AD2219EB4B0078EE5A /* CurrentLevelManager.swift */,
 				0BE11E18221F4D8400F2E068 /* Level+EasyCreation.swift */,
 				0BE11E1A221F502B00F2E068 /* Section+EasyCreation.swift */,
 				0BE11E1C221F55FD00F2E068 /* Segment+EasyCreation.swift */,
+				0BE11E1E221F618D00F2E068 /* Piece+EasyCreation.swift */,
 			);
 			path = LevelManaging;
 			sourceTree = "<group>";
@@ -202,6 +212,16 @@
 				0B5E0361221686AD00606FC6 /* LevelModel.xcdatamodeld */,
 			);
 			path = Neon;
+			sourceTree = "<group>";
+		};
+		0BE11E20221F63FD00F2E068 /* Levels */ = {
+			isa = PBXGroup;
+			children = (
+				0BE11E21221F648D00F2E068 /* Level1.swift */,
+				0BE11E23221F650E00F2E068 /* Level2.swift */,
+				0BE11E25221F651E00F2E068 /* Level3.swift */,
+			);
+			path = Levels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,12 +308,15 @@
 				0BB11FA8220B36560089AD1C /* GameScene.swift in Sources */,
 				0B7291A5220DF14A008CAF41 /* PieceFactory.swift in Sources */,
 				0BE11E1B221F502B00F2E068 /* Section+EasyCreation.swift in Sources */,
+				0BE11E26221F651E00F2E068 /* Level3.swift in Sources */,
 				0B75BAC222109D1000927098 /* PieceTypes.swift in Sources */,
 				0B5E03852218838A00606FC6 /* GameScene+ScreenEffects.swift in Sources */,
 				0B6016AC2219DFC90078EE5A /* GameScene+Sonuds.swift in Sources */,
+				0BE11E1F221F618D00F2E068 /* Piece+EasyCreation.swift in Sources */,
 				0BB11FAA220B36560089AD1C /* GameViewController.swift in Sources */,
 				0B5E03892218CEEE00606FC6 /* ClearShapeNode.swift in Sources */,
 				0B72919F220CB784008CAF41 /* Player.swift in Sources */,
+				0BE11E24221F650E00F2E068 /* Level2.swift in Sources */,
 				0BE11E19221F4D8400F2E068 /* Level+EasyCreation.swift in Sources */,
 				0B7291AB220E1743008CAF41 /* TitleMenuView.swift in Sources */,
 				0B7291B6220E429C008CAF41 /* CollisionCategories.swift in Sources */,
@@ -304,6 +327,7 @@
 				0B7291A3220CC7C7008CAF41 /* GameScene+TailFunctions.swift in Sources */,
 				0B7291B1220E2A60008CAF41 /* GameOverView.swift in Sources */,
 				0B5E0363221686AD00606FC6 /* LevelModel.xcdatamodeld in Sources */,
+				0BE11E22221F648D00F2E068 /* Level1.swift in Sources */,
 				0B5E03812217794000606FC6 /* LevelDatabaseCreator.swift in Sources */,
 				0B5E03872218A7D400606FC6 /* Player+Animations.swift in Sources */,
 				0BB11FA2220B36560089AD1C /* AppDelegate.swift in Sources */,
