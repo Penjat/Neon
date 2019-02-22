@@ -62,6 +62,7 @@ class PieceFactory{
     }
   }
   func getNextLevel(){
+    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let request: NSFetchRequest<Level> = Level.fetchRequest()
     let context = appDelegate.persistentContainer.viewContext
