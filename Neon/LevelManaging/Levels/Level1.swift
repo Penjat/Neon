@@ -8,27 +8,16 @@ extension LevelDatabeaseCreator{
     
     
     //let level1 = Level(context: context)
-    let level1 = Level.create(context: context )
-    level1.name = "level 1"
-    level1.background = 0
-    level1.difficulty = 1
-    level1.direction = 0
-    level1.music = 1
+    let level1 = Level.create(context: context ,name:"level 1" ,difficulty: 1 )
     
     
     //---------------section 1-------------------
-    let section1 = Section(context: context)
-    section1.speed = 30.0
-    section1.distance = 500.0
-    section1.orderId = 0
-    //section1.segments = [segment1]
+    let section1 = Section.create(context: context, order:0 , distance:500.0,speed:30.0)
+    
     level1.add(section: section1)
     
     //create the segment
-    let segment1 = Segment(context: context)
-    segment1.frequency = 50.0
-    segment1.spacing = 20.0
-    //segment1.pieces = [piece1,piece2]
+    let segment1 = Segment.create(context: context , frequency: 50.0 , spacing: 20.0)
     section1.add(segment: segment1)
     
     //create the pieces
