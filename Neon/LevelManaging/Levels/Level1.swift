@@ -20,15 +20,10 @@ extension LevelDatabeaseCreator{
     let segment1 = Segment.create(context: context , frequency: 50.0 , spacing: 20.0)
     section1.add(segment: segment1)
     
+    
     //create the pieces
-    let piece1 = Piece(context: context)
-    piece1.type = 0
-    piece1.color = 0
-    piece1.x = -2.0
-    piece1.y = 0.0
-    piece1.width = 1.0
-    piece1.height = 1.0
-    piece1.isRandom = false
+    let piece1 = Piece.create(context: context ,type: 0 , color: CollectType.Points ,x:-2.0 , y:0.0 , width:1.0 , height: 1.0)
+   
     segment1.add(piece: piece1)
     
     let piece2 = Piece(context: context)
