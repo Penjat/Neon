@@ -5,64 +5,38 @@ import CoreData
 extension LevelDatabeaseCreator{
   
   func createLevel2(context:NSManagedObjectContext){
-    let level = Level(context: context)
-    level.name = "level 2"
-    level.background = 0
-    level.difficulty = 1
-    level.direction = 0
-    level.music = 1
-    //level.sections = [section1,section4]
+    //------------------LEVEL 1------------------------------
+    let level = Level.create(context: context ,name:"level 2" ,difficulty: 1 )
     
-    //------------------Section 1-----------------------
-    let section1 = Section(context: context)
-    section1.speed = 30.0
-    section1.distance = 500.0
-    section1.orderId = 0
-    //section1.segments = [segment3]
+    
+    //---------------section 1-------------------
+    
+    let section1 = Section.create(context: context, order:0 , distance:500.0,speed:30.0)
     level.add(section: section1)
     
-    //create the segment
-    let segment_1_1 = Segment(context: context)
-    segment_1_1.frequency = 50.0
-    segment_1_1.spacing = 60.0
-    section1.add(segment: segment_1_1)
-    //segment3.pieces = [piece5]
+    //----------section 1 segment 1
+    let section1_segment1 = Segment.create(context: context , frequency: 50.0 , spacing: 20.0)
+    section1.add(segment: section1_segment1)
+    
+    section1_segment1.add(piece: Piece.create(context: context ,type: 0 , color: CollectType.Points ,x:-4.0 , y:0.0 , width:1.0 , height: 1.0))
+    
+    section1_segment1.add(piece: Piece.create(context: context ,type: 0 , color: CollectType.Points ,x:0.0 , y:0.0 , width:1.0 , height: 1.0))
     
     
-    let piece6 = Piece(context: context)
-    piece6.type = 0
-    piece6.color = 1
-    piece6.x = 0.0
-    piece6.y = 0.0
-    piece6.width = 2.0
-    piece6.height = 3.0
-    piece6.isRandom = false
-    segment_1_1.add(piece: piece6)
     
-    //--------------------Section 2------------------------
-    let section2 = Section(context: context)
-    section2.speed = 30.0
-    section2.distance = 500.0
-    section2.orderId = 1
-    //section2.segments = [segment4]
+    
+    //----------------------section 2---------------------
+    let section2 = Section.create(context: context, order: 1, distance: 500.0, speed: 30.0)
     level.add(section: section2)
     
-    let segment_1_2 = Segment(context: context)
-    segment_1_2.frequency = 50.0
-    segment_1_2.spacing = 40.0
-    //segment_1_2.pieces = [piece6]
-    section2.add(segment: segment_1_2)
+    //-----------section2 segment1
+    let section2_segment1 = Segment.create(context: context, frequency: 50.0, spacing: 20.0)
     
-    //create the pieces
-    let piece5 = Piece(context: context)
-    piece5.type = 0
-    piece5.color = 1
-    piece5.x = -10.0
-    piece5.y = 0.0
-    piece5.width = 3.0
-    piece5.height = 1.0
-    piece5.isRandom = false
-    segment_1_2.add(piece: piece5)
+    section2.add(segment: section2_segment1)
+    
+    section2_segment1.add(piece: Piece.create(context: context, type: 0, color: CollectType.DamagePlayer, x: -4, y: 0, width: 2.0, height: 2.0))
+    
+    section2_segment1.add(piece: Piece.create(context: context, type: 0, color: CollectType.DamagePlayer, x: 0, y: 1, width: 2.0, height: 2.0))
     
    
     
