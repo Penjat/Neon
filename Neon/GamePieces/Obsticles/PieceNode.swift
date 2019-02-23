@@ -23,7 +23,7 @@ class PieceNode: SKSpriteNode {
     collectType = pieceCollectType
     
   }
-  func setUp(){
+  func setUp(ratio:Float = 1.0){
     
   }
   

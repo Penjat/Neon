@@ -16,12 +16,12 @@ extension LevelDatabeaseCreator{
     level.add(section: section1)
     
     //----------section 1 segment 1
-    let section1_segment1 = Segment.create(context: context , frequency: 50.0 , spacing: 20.0)
+    let section1_segment1 = Segment.create(context: context , frequency: 50.0 , spacing: 5.0)
     section1.add(segment: section1_segment1)
 
-    section1_segment1.add(piece: Piece.create(context: context ,type: 0 , color: CollectType.Points ,x:-2.0 , y:0.0 , width:1.0 , height: 1.0))
+    section1_segment1.add(piece: Piece.create(context: context ,type: 0 , color: CollectType.Points ,x:0.0 , y:0.0 , width:4.0 , height: 1.0))
     
-    section1_segment1.add(piece: Piece.create(context: context ,type: 0 , color: CollectType.DamagePlayer ,x:2.0 , y:0.0 , width:1.0 , height: 1.0))
+//    section1_segment1.add(piece: Piece.create(context: context ,type: 0 , color: CollectType.DamagePlayer ,x:2.0 , y:0.0 , width:1.0 , height: 1.0))
     
     
     

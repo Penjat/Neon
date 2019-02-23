@@ -8,8 +8,8 @@ extension GameScene {
     
     
     
-    let pieceNode = DiamondPiece(piece: piece)
-    pieceNode.setUp()
+    let pieceNode = ForthBackPiece(piece: piece)
+    pieceNode.setUp(ratio: getRatio())
     //TODO pass this through init
     
     //    let piecePosition = CGPoint(x: piece.position.x, y: piece.position.y - mainNode.position.y + frame.height/2)

@@ -11,6 +11,8 @@ class CurrentLevelManager{
   
   private var curLevel :Level!
   
+  var ratio :Float!
+  
   var curSectionIndex = 0
   var sectionArray :[Section]!
   var segmentArray :[Segment]!
@@ -18,6 +20,9 @@ class CurrentLevelManager{
   var distUntilNextSegment :CGFloat = 0.0
   var distUntilNextSection :CGFloat = 0.0
   
+  init(ratio:Float) {
+    self.ratio = ratio
+  }
   func set(curLevel:Level){
     
     //starting a new level
@@ -33,7 +38,7 @@ class CurrentLevelManager{
   
   func startLevel(movingNodeY:CGFloat){
     print("starting level")
-    distUntilNextSection -= CGFloat(sectionArray[0].distance*10)
+    distUntilNextSection -= CGFloat(sectionArray[0].distance*ratio)
     distUntilNextSegment = movingNodeY-200
     print("distSeg = \(distUntilNextSegment)")
   }
@@ -43,7 +48,7 @@ class CurrentLevelManager{
     
     let segment = segmentArray.randomElement()
     //print("segment array count \(segmentArray.count)")
-    distUntilNextSegment -= CGFloat(segment!.spacing*10)
+    distUntilNextSegment -= CGFloat(segment!.spacing*ratio)
     
     return segment!.pieces!.allObjects as! [Piece]
     

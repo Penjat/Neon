@@ -17,7 +17,7 @@ class PieceFactory{
   
   init(gameScene: GameScene) {
     self.gameScene = gameScene
-    currentLevelManager = CurrentLevelManager()
+    currentLevelManager = CurrentLevelManager(ratio:gameScene.getRatio())
 
     getNextLevel()
     

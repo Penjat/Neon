@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B03DFF02220ED1700FF0B2D /* ForthBackPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B03DFEF2220ED1700FF0B2D /* ForthBackPiece.swift */; };
 		0B2A9892220E9FD90048DC80 /* TailPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2A9891220E9FD90048DC80 /* TailPiece.swift */; };
 		0B5E0363221686AD00606FC6 /* LevelModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0B5E0361221686AD00606FC6 /* LevelModel.xcdatamodeld */; };
 		0B5E03812217794000606FC6 /* LevelDatabaseCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5E03802217794000606FC6 /* LevelDatabaseCreator.swift */; };
@@ -52,6 +53,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B03DFEF2220ED1700FF0B2D /* ForthBackPiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForthBackPiece.swift; sourceTree = "<group>"; };
 		0B2A9891220E9FD90048DC80 /* TailPiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TailPiece.swift; sourceTree = "<group>"; };
 		0B5E0362221686AD00606FC6 /* LevelModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LevelModel.xcdatamodel; sourceTree = "<group>"; };
 		0B5E03802217794000606FC6 /* LevelDatabaseCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelDatabaseCreator.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				0B729198220CA1DB008CAF41 /* PieceNode.swift */,
 				0BE11E28221FBD0800F2E068 /* SpiningPiece.swift */,
 				0BE11E2C221FC01D00F2E068 /* DiamondPiece.swift */,
+				0B03DFEF2220ED1700FF0B2D /* ForthBackPiece.swift */,
 			);
 			path = Obsticles;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B03DFF02220ED1700FF0B2D /* ForthBackPiece.swift in Sources */,
 				0B72919D220CA8B1008CAF41 /* GameScene+Touches.swift in Sources */,
 				0B2A9892220E9FD90048DC80 /* TailPiece.swift in Sources */,
 				0B6016AE2219EB4B0078EE5A /* CurrentLevelManager.swift in Sources */,

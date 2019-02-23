@@ -20,4 +20,8 @@ extension GameScene{
     
     return CGPoint(x: ( position.x  * ratio), y: position.y * ratio - movingNode.position.y + frame.height/2.0)
   }
+  
+  func getRatio()->Float{
+    return Float(frame.width / 32.0)
+  }
 }
