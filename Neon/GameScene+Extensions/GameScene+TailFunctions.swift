@@ -32,7 +32,7 @@ extension GameScene{
         //let spot = SKSpriteNode(color: UIColor.green, size: CGSize(width: 20, height: 20))
         //spot.position = intersectPoint!
         //mainNode.addChild(spot)
-        let subArray = tailArray[i ... tailArray.count-1]
+        let subArray = tailArray[i ..< tailArray.count]
         tailArray = [TailPiece]() + tailArray[0...i]
         let mutaPath = CGMutablePath()
         
@@ -51,8 +51,8 @@ extension GameScene{
         }
         //TODO can just make an empty Node
         let clearShapeNode = ClearShapeNode()
-        //clearShapeNode.path = mutaPath.copy()
-        //polygon.fillColor = UIColor.green
+        clearShapeNode.path = mutaPath.copy()
+        clearShapeNode.fillColor = UIColor.green
         clearShapeNode.strokeColor = UIColor.blue
         clearShapeNode.physicsBody = SKPhysicsBody(polygonFrom: mutaPath.copy()!)
         clearShapeNode.physicsBody?.categoryBitMask = TAIL_CATAGORY

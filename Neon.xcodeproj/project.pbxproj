@@ -32,6 +32,7 @@
 		0B7291B6220E429C008CAF41 /* CollisionCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7291B5220E429C008CAF41 /* CollisionCategories.swift */; };
 		0B75BAC222109D1000927098 /* PieceTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B75BAC122109D1000927098 /* PieceTypes.swift */; };
 		0B75BAC42210CBED00927098 /* GameScene+PieceSizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B75BAC32210CBED00927098 /* GameScene+PieceSizing.swift */; };
+		0B9A13D2222386B900503357 /* CoinPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9A13D1222386B900503357 /* CoinPiece.swift */; };
 		0BB11FA2220B36560089AD1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB11FA1220B36560089AD1C /* AppDelegate.swift */; };
 		0BB11FA4220B36560089AD1C /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0BB11FA3220B36560089AD1C /* GameScene.sks */; };
 		0BB11FA8220B36560089AD1C /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB11FA7220B36560089AD1C /* GameScene.swift */; };
@@ -78,6 +79,7 @@
 		0B7291B5220E429C008CAF41 /* CollisionCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollisionCategories.swift; sourceTree = "<group>"; };
 		0B75BAC122109D1000927098 /* PieceTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceTypes.swift; sourceTree = "<group>"; };
 		0B75BAC32210CBED00927098 /* GameScene+PieceSizing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+PieceSizing.swift"; sourceTree = "<group>"; };
+		0B9A13D1222386B900503357 /* CoinPiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinPiece.swift; sourceTree = "<group>"; };
 		0BB11F9E220B36560089AD1C /* Neon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BB11FA1220B36560089AD1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BB11FA3220B36560089AD1C /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 			children = (
 				0B729198220CA1DB008CAF41 /* PieceNode.swift */,
 				0BE11E28221FBD0800F2E068 /* SpiningPiece.swift */,
+				0B9A13D1222386B900503357 /* CoinPiece.swift */,
 				0BE11E2C221FC01D00F2E068 /* DiamondPiece.swift */,
 				0B03DFEF2220ED1700FF0B2D /* ForthBackPiece.swift */,
 			);
@@ -345,6 +348,7 @@
 				0B7291B3220E2B06008CAF41 /* MenuDelegateProtocol.swift in Sources */,
 				0BB11FA8220B36560089AD1C /* GameScene.swift in Sources */,
 				0B7291A5220DF14A008CAF41 /* PieceFactory.swift in Sources */,
+				0B9A13D2222386B900503357 /* CoinPiece.swift in Sources */,
 				0BE11E1B221F502B00F2E068 /* Section+EasyCreation.swift in Sources */,
 				0BE11E26221F651E00F2E068 /* Level3.swift in Sources */,
 				0B75BAC222109D1000927098 /* PieceTypes.swift in Sources */,
